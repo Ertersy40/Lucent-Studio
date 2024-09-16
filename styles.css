@@ -1,9 +1,16 @@
+:root{
+    --background-color: #010033;
+    --star-base-color: #e5e0d21f;
+    --star-color: #FEFFCC;
+    --star-glow-color: #fff8a8;
+}
+
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #140111; /* Dark background */
+    background-color: var(--background-color); /* Dark background */
     overflow-x: hidden;
 }
 
@@ -18,9 +25,10 @@ body, html {
 
 .title {
     position: absolute;
-    bottom: 30px;
+    top: calc(50% - 1.2em);
+    left: 25%;
+    text-shadow: 0px 0px 20px white;
     margin-block: 0;
-    left: 10px;
     color: white;
     font-size: 5rem;
     mix-blend-mode: difference;
@@ -42,13 +50,13 @@ body, html {
 .star {
     margin-block: -20px;
     font-size: 4rem; /* Larger star size */
-    color: #444; /* Dim initial color */
-    transition: transform 0.3s, color 0.3s;
+    color: var(--star-base-color); /* Dim initial color */
+    transition: transform 0.3s, color 0.3s, text-shadow 0.5s;
     text-align: center;
 }
 
 .glow {
-    color: #f9f871; /* Glow color */
+    color: var(--star-color); /* Glow color */
     transform: scale(1.2); /* Grow on hover */
-    text-shadow:0px 0px 20px #f9f971;
+    text-shadow:0px 0px 20px var(--star-glow-color);
 }

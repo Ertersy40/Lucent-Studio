@@ -28,7 +28,7 @@ function handleMouseMove(event) {
         const distance = getDistance(mouseX, mouseY, starX, starY);
 
         // Apply glow effect if the star is within 100px radius of the mouse
-        if (distance < 100) {
+        if (distance < 60) {
             star.classList.add('glow');
         } else {
             star.classList.remove('glow');
