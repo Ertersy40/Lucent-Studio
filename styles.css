@@ -1,62 +1,311 @@
-:root{
-    --background-color: #010033;
-    --star-base-color: #e5e0d21f;
-    --star-color: #FEFFCC;
-    --star-glow-color: #fff8a8;
+:root {
+    --highlight-color: #FFFEEF;
+    --lowlight-color: #09182E;
 }
 
-body, html {
+html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    background-color: var(--background-color); /* Dark background */
-    overflow-x: hidden;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+    font-family: 'relationship of melodrame';
+    src: url('/Assets/Fonts/relationshipofmelodrame-regul.woff2') format('woff2'),
+        url('/Assets/Fonts/relationshipofmelodrame-regul.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+* {
+    font-family: 'poppins';
+}
+
+h2, h4, a, u {
+    font-family: "relationship of melodrame";
+    letter-spacing: 3px;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    width: calc(100% - 40px);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+nav a {
+    color: var(--highlight-color);
+    font-weight: 100;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+}
+
+nav a:hover {
+    text-shadow: 0 0 20px var(--highlight-color);
+}
+
+nav .links {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
 }
 
 .hero {
-    position: relative;
-    height: 100vh;
+    padding: 2rem 5rem;
+    background-color: var(--lowlight-color);
+    color: var(--highlight-color);
+    text-align: center;
+
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    overflow-x: hidden;
 }
 
-.title {
-    position: absolute;
-    top: calc(50% - 1.2em);
-    left: 25%;
-    text-shadow: 0px 0px 20px white;
-    margin-block: 0;
-    color: white;
-    font-size: 5rem;
-    mix-blend-mode: difference;
-    z-index: 1;
-    pointer-events: none;
+.hero h1 {
+    margin-bottom: 0px;
+    font-size: min(20vw, 300px);
 }
 
-.star-grid {
-    position: absolute;
-    top: 0;
-    display: grid;
-    grid-template-columns: repeat(20, 1fr); /* More columns to make stars closer */
-    grid-template-rows: repeat(10, 1fr);    /* More rows */
-    gap: 0px; /* Reduce gap between stars */
-    width: 100vw;
-    height: 70vh;
+.hero h2 {
+    font-size: 5vw;
+    font-weight: 300;
+    width: 40vw;
+    line-height: 3.5rem;
 }
 
 .star {
-    margin-block: -20px;
-    font-size: 4rem; /* Larger star size */
-    color: var(--star-base-color); /* Dim initial color */
-    transition: transform 0.3s, color 0.3s, text-shadow 0.5s;
-    text-align: center;
+    margin-left: 10px;
 }
 
 .glow {
-    color: var(--star-color); /* Glow color */
-    transform: scale(1.2); /* Grow on hover */
-    text-shadow:0px 0px 20px var(--star-glow-color);
+    text-shadow: 0px 0px 0 var(--highlight-color);
+    animation: pulse-glow 4s infinite;
+}
+
+@keyframes pulse-glow {
+	0% {
+		text-shadow: 0 0 0 var(--highlight-color);
+	}
+	
+	50% {
+		text-shadow: 0 0 20px var(--highlight-color);
+	}
+	
+	100% {
+		text-shadow: 0 0 0 var(--highlight-color);
+	}
+}
+
+.bone {
+    background-color: var(--highlight-color);
+}
+
+.detail {
+    padding: 2rem;
+    display: flex;
+}
+
+.detail button {
+    background-color: var(--lowlight-color);
+    border: 2px solid var(--lowlight-color);
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 0.4rem 1rem;
+}
+
+.detail button img {
+    width: 30px;
+    height: 12px;
+    fill: #09182E;
+    mix-blend-mode: difference;
+}
+
+.detail button span {
+    mix-blend-mode: difference;
+    text-wrap: nowrap;
+    color: var(--highlight-color);
+}
+
+.detail button::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: var(--highlight-color);
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.detail button:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+
+.detail button:hover {
+    cursor: pointer;
+}
+
+.features {
+    margin-left: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.feature {
+    margin-left: 20px;
+}
+
+.feature h4 {
+    font-weight: 200;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.autoScroll {
+    display: flex;
+    align-items: center;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Adjust the width as needed */
+}
+
+.autoScroll h2 {
+    margin-left: 1.8rem;
+    font-size: 5em;
+    font-weight: 200;
+    display: inline-block;
+    color: #09182E;
+}
+
+.marquee {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 60s linear infinite;
+}
+
+.marquee1 span {
+    animation-delay: -30s;
+}
+
+.marquee2 span {
+    animation-delay: 0s; /* Half of the animation duration */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+/* Custom cursor styling */
+#customCursor {
+    text-align: center;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    width: 38px; /* Adjust size as needed */
+    height: 38px;
+    background-color: var(--highlight-color);
+    border: 2px solid var(--lowlight-color);
+    border-radius: 25px;
+    background-size: contain;
+    pointer-events: none; /* Allow clicks to pass through */
+    transform: translate(-50%, -50%); /* Center the image on the cursor */
+    display: none; /* Hide by default */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+#customCursor img {
+    width: 30px;
+    height: 12px;
+}
+  
+#customCursor:hover {
+    cursor: none;
+}
+  /* Show custom cursor when hovering over the autoscroll */
+  .autoScroll:hover + #customCursor {
+    cursor: none;
+    display: block;
+  }
+
+footer {
+    background-color: var(--lowlight-color);
+    color: var(--highlight-color);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    padding: 1rem 3rem
+}
+
+footer a {
+    font-family: 'poppins';
+    color: var(--highlight-color);
+    text-decoration: none;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.socialImages{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 12%;
+}
+
+@media only screen and (max-width: 937px) {
+    footer .socials {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 695px) {
+    /* TODO: Ask abbot. We probably want socials there when you're on your phone */
+    footer .socials p, footer .socials .socialImages {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 695px) {
+    /* TODO: Add the hamburger */
+    
+    .detail {
+        flex-direction: column;
+    }
+
+    .features {
+        margin-top: 40px;
+        margin-left: 0;
+    }
+
+    .feature:nth-child(odd) {
+        margin-left: 0;
+    }
 }

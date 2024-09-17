@@ -1,0 +1,62 @@
+:root{
+    --background-color: #010033;
+    --star-base-color: #e5e0d21f;
+    --star-color: #FEFFCC;
+    --star-glow-color: #fff8a8;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color); /* Dark background */
+    overflow-x: hidden;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.title {
+    position: absolute;
+    top: calc(50% - 1.2em);
+    left: 25%;
+    text-shadow: 0px 0px 20px white;
+    margin-block: 0;
+    color: white;
+    font-size: 5rem;
+    mix-blend-mode: difference;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.star-grid {
+    position: absolute;
+    top: 0;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr); /* More columns to make stars closer */
+    grid-template-rows: repeat(10, 1fr);    /* More rows */
+    gap: 0px; /* Reduce gap between stars */
+    width: 100vw;
+    height: 70vh;
+}
+
+.star {
+    margin-block: -20px;
+    font-size: 4rem; /* Larger star size */
+    color: var(--star-base-color); /* Dim initial color */
+    transition: transform 0.3s, color 0.3s, text-shadow 0.5s;
+    text-align: center;
+}
+
+.glow {
+    color: var(--star-color); /* Glow color */
+    transform: scale(1.2); /* Grow on hover */
+    text-shadow:0px 0px 20px var(--star-glow-color);
+}
