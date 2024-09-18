@@ -49,10 +49,104 @@ nav a:hover {
     text-shadow: 0 0 20px var(--highlight-color);
 }
 
+nav .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 nav .links {
+    margin: 0;
+    padding: 0;
     display: flex;
     width: 40%;
     justify-content: space-between;
+}
+
+nav .links li {
+    list-style: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    nav .logo {
+        width: 210px;
+    }
+
+    /* TODO: add home to nav? */
+    nav .links {
+        z-index: 2;
+        background: var(--lowlight-color);
+        box-shadow: 8px 0px 15px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(22px);
+        -webkit-backdrop-filter: blur(22px);
+        justify-content: flex-start;
+        padding-left: 0px;
+        padding-top: 70px;
+        position: fixed;
+        left: 0px;
+        height: 100vh;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateY(-100%);
+        transition: transform 0.5s ease-in-out;
+    }
+    nav .nav-links ul {
+        width: 100%;
+        margin-left: -20px;
+    }
+    nav .nav-links li a{
+        font-weight: 100;
+        font-size: 1.3rem;
+        line-height: 50px;
+    }
+    nav .burger {
+        display: block;
+        z-index: 3;
+    }
+}
+
+.burger {
+    z-index: 10;
+    position: relative;
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 40px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: var(--highlight-color);
+    margin: 8px;
+    transition: all 0.3s ease;
+}
+
+nav .nav-active {
+    transform: translateX(0%);
+}
+
+.nav-active li {
+    opacity: 1;
+}
+
+.toggle .line1 {
+    transform: translateY(12px) rotate(-45deg) ;
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: translateY(-10px) rotate(45deg)
 }
 
 .hero {
@@ -241,11 +335,11 @@ nav .links {
 }
   
 #customCursor:hover {
-    cursor: none;
+    cursor: none !important;
 }
   /* Show custom cursor when hovering over the autoscroll */
   .autoScroll:hover + #customCursor {
-    cursor: none;
+    cursor: none !important;
     display: block;
   }
 
