@@ -185,20 +185,20 @@ nav .nav-active {
 
 .glow {
     text-shadow: 0px 0px 0 var(--highlight-color);
-    animation: pulse-glow 4s infinite;
+    animation: pulse-glow 6s infinite;
 }
 
 @keyframes pulse-glow {
 	0% {
-		text-shadow: 0 0 0 var(--highlight-color);
+		text-shadow: 0 0 30px var(--highlight-color);
 	}
 	
 	50% {
-		text-shadow: 0 0 20px var(--highlight-color);
+		text-shadow: 0 0 70px var(--highlight-color);
 	}
 	
 	100% {
-		text-shadow: 0 0 0 var(--highlight-color);
+		text-shadow: 0 0 30px var(--highlight-color);
 	}
 }
 
