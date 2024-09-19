@@ -25,6 +25,9 @@ html, body {
 
 h2, h4, a, u {
     font-family: "relationship of melodrame";
+}
+
+h2 {
     letter-spacing: 3px;
 }
 
