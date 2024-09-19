@@ -11,11 +11,13 @@ function updateCursorPosition(e) {
 // Show custom cursor and hide default cursor when entering autoscroll
 autoScroll.addEventListener('mouseenter', () => {
   customCursor.style.display = 'flex';
+  document.body.style.cursor = 'none';
 });
 
 // Hide custom cursor when leaving autoscroll
 autoScroll.addEventListener('mouseleave', () => {
   customCursor.style.display = 'none';
+  document.body.style.cursor = 'auto';
 });
 
 // Update custom cursor position when moving within autoscroll

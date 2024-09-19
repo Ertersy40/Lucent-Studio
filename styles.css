@@ -333,13 +333,8 @@ nav .nav-active {
     width: 30px;
     height: 12px;
 }
-  
-#customCursor:hover {
-    cursor: none !important;
-}
   /* Show custom cursor when hovering over the autoscroll */
   .autoScroll:hover + #customCursor {
-    cursor: none !important;
     display: block;
   }
 
