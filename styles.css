@@ -37,6 +37,10 @@ nav {
     padding: 20px;
 }
 
+nav #homeLink {
+    display: none;
+}
+
 nav a {
     color: var(--highlight-color);
     font-weight: 100;
@@ -77,7 +81,10 @@ nav .links li {
         width: 210px;
     }
 
-    /* TODO: add home to nav? */
+    nav #homeLink {
+        display: block;
+    }
+
     nav .links {
         z-index: 2;
         background: var(--lowlight-color);
@@ -376,14 +383,16 @@ footer a {
 }
 
 @media only screen and (max-width: 695px) {
-    /* TODO: Ask abbot. We probably want socials there when you're on your phone */
-    footer .socials p, footer .socials .socialImages {
+    footer .socials p {
         display: none;
+    }
+
+    footer .socials .socialImages {
+        width: 70px;
     }
 }
 
 @media only screen and (max-width: 695px) {
-    /* TODO: Add the hamburger */
     
     .detail {
         flex-direction: column;
