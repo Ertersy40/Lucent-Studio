@@ -29,20 +29,21 @@
     font-size: 10rem;
     margin-left: -4.99rem;
     /* line-height: 25px; */
-    transition: transform 0.2s ease-out;
 }
 
 .step {
     padding-inline: 100px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 300px 1fr;
     text-align: left;
     width: calc(100svw - 100px * 2 - 17px);
-    justify-content: space-between;
+    justify-content: center;
     transition: all 0.2s ease-in-out;
+    padding-bottom: 200px;
 }
 
-.step>* {
-    width: 400px;
+.stepPadding {
+    width: 300px;
 }
 
 .step:not(.focus) {
@@ -51,17 +52,46 @@
 
 .step.focus {
     opacity: 1;
-    text-shadow: 0px 0px 20px var(--highlight-color);
+    /* text-shadow: 0px 0px 20px var(--highlight-color); */
 }
 
 .step:nth-child(even){
     flex-direction: row-reverse;
 }
 
+.step .stepDetails {
+    grid-column-start: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.step .stepDetails .stepTitle {
+    width: min(100%, 450px);
+}
+
+.step:nth-child(even) .stepDetails {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    align-items: flex-end;
+}
+
+.step:nth-child(even) .stepNo {
+    grid-column-start: 3;
+}
+
+
+
 .stepNo {
     font-size: 5rem;
     font-weight: 100;
+    width: 100%;
 
+}
+
+.stepDetails p{
+    
+    max-width: 450px;
 }
 
 .step:nth-child(odd) .stepNo {
