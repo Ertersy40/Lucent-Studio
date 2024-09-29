@@ -1,0 +1,70 @@
+.Process-hero{
+    margin-top: calc(var(--nav-height) - 1px);
+    padding: 2rem 5rem;
+    background-color: var(--lowlight-color);
+    color: var(--highlight-color);
+    text-align: center;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Process-hero #slider {
+    background-color: var(--highlight-color);
+    width: 2px;
+    position: absolute;
+    left: calc(50vw);
+    top: 0;
+    bottom: 0;
+}
+
+.Process-hero #slider .star {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:1em;
+    width: 1em;
+    font-size: 10rem;
+    margin-left: -4.99rem;
+    /* line-height: 25px; */
+    transition: transform 0.2s ease-out;
+}
+
+.step {
+    padding-inline: 100px;
+    display: flex;
+    text-align: left;
+    width: calc(100svw - 100px * 2 - 17px);
+    justify-content: space-between;
+    transition: all 0.2s ease-in-out;
+}
+
+.step>* {
+    width: 400px;
+}
+
+.step:not(.focus) {
+    opacity: 0.25;
+}
+
+.step.focus {
+    opacity: 1;
+    text-shadow: 0px 0px 20px var(--highlight-color);
+}
+
+.step:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+.stepNo {
+    font-size: 5rem;
+    font-weight: 100;
+
+}
+
+.step:nth-child(odd) .stepNo {
+    text-align: right;
+}
+

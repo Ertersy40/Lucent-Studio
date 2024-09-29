@@ -1,6 +1,7 @@
 :root {
     --highlight-color: #FFFEEF;
     --lowlight-color: #09182E;
+    --nav-height: 106px
 }
 
 html, body {
@@ -32,9 +33,11 @@ h2 {
 }
 
 nav {
+    background-color: var(--lowlight-color);
     position: absolute;
     top: 0;
     width: calc(100% - 40px);
+    height: calc(var(--nav-height) - 20px * 2);
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -45,6 +48,8 @@ nav #homeLink {
 }
 
 nav a {
+    width: 100px;
+    text-align: center;
     color: var(--highlight-color);
     font-weight: 100;
     font-size: 1.5em;
@@ -67,12 +72,23 @@ nav .links {
     padding: 0;
     display: flex;
     width: 40%;
+    align-items: center;
     justify-content: space-between;
+}
+
+nav .links .selected {
+    text-decoration: underline;
+    text-shadow: 0px 0px 10px var(--highlight-color);
 }
 
 nav .links li {
     list-style: none;
     transition: opacity 0.2s ease-in-out;
+}
+
+nav .contact {
+    display: flex;
+    align-items: center;
 }
 
 @media screen and (max-width: 768px) {
