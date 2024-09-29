@@ -54,7 +54,7 @@ nav a {
     text-align: center;
     color: var(--highlight-color);
     font-weight: 100;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     text-decoration: none;
     transition: all 0.4s ease-in-out;
 }
@@ -178,7 +178,7 @@ nav .nav-active {
 }
 
 .hero {
-    padding: 2rem 5rem;
+    padding: 2em 5em;
     background-color: var(--lowlight-color);
     color: var(--highlight-color);
     text-align: center;
@@ -197,7 +197,7 @@ nav .nav-active {
     font-size: 5vw;
     font-weight: 300;
     width: 40vw;
-    line-height: 3.5rem;
+    line-height: 1em;
 }
 
 .star {
@@ -228,7 +228,7 @@ nav .nav-active {
 }
 
 .detail {
-    padding: 2rem;
+    padding: 2em;
     display: flex;
 }
 
@@ -239,7 +239,7 @@ nav .nav-active {
     position: relative;
     display: inline-block;
     border-radius: 20px;
-    padding: 0.4rem 1rem;
+    padding: 0.4em 1em;
 }
 
 .detail button img {
@@ -303,8 +303,8 @@ nav .nav-active {
 }
 
 .autoScroll h2 {
-    margin-left: 1.8rem;
-    font-size: 5em;
+    margin-left: 0.3em;
+    font-size: 5rem;
     font-weight: 200;
     display: inline-block;
     color: #09182E;
@@ -374,7 +374,7 @@ footer {
     align-items: center;
     justify-content: space-between;
     font-size: 1rem;
-    padding: 1rem 3rem
+    padding: 1em 3em
 }
 
 footer a {
