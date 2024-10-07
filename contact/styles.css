@@ -11,3 +11,56 @@
     font-weight: 500;
     font-family: 'relationship of melodrame', sans-serif;
 }
+
+.messageForm {
+    position: absolute;
+    width: 542px;
+    height: 660px;
+    right: 200px;
+    top: 153 px;
+
+    backdrop-filter: blur(40px);
+}
+.messageForm form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    box-sizing: border-box;
+    background: #041022;
+    opacity: 0.8;
+    border: 1.5px solid #FFFEEF;
+    backdrop-filter: blur(40px);
+    border-radius: 30px;
+}
+
+.messageForm form input, .messageForm form textarea {
+    resize: none;
+    background-color: transparent;
+    color: var(--highlight-color);
+    border: none;
+    border-bottom: 2px solid var(--highlight-color);
+}
+
+.messageForm form input::placeholder {
+    color: var(--highlight-color);
+}
+
+.messageForm form {
+    padding: 3em;
+}
+
+.message>*{
+    font-family: 'poppins', sans-serif;
+}
+
+.message {
+    padding: 4em 10em;
+}
+
+/* TODO: Make these icons visible somehow */
+.message .socialImages img {
+    fill: var(--lowlight-color);
+    stroke: var(--lowlight-color);
+    color: var(--lowlight-color);
+}
