@@ -1,5 +1,5 @@
 .page {
-    margin-top: var(--nav-height);
+    margin-top: calc(var(--nav-height) - 1px);
     background-color: var(--lowlight-color);
     padding: 3em;
 }
@@ -23,10 +23,16 @@
     width: 200px;
 }
 
-.page .section1 {
+.page .section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 70px;
+    margin-bottom: 200px;
+}
+
+.page .section3 {
+    align-items: center;
+    margin-top: -40vw;
 }
 
 .section .textAndButton {
