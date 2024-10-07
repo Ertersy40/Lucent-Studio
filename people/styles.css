@@ -1,0 +1,36 @@
+.page {
+    margin-top: var(--nav-height);
+    background-color: var(--lowlight-color);
+    padding: 3em;
+}
+
+* {
+    color: var(--highlight-color)
+}
+
+.page h1 {
+    margin: 0;
+    font-size: 7rem;
+    font-weight: 500;
+    font-family: 'relationship of melodrame', sans-serif;
+}
+
+.page .section button {
+    background-color: var(--lowlight-color);
+    border: 2px solid var(--highlight-color);
+    padding: 0.7em;
+    border-radius: 20px;
+    width: 200px;
+}
+
+.page .section1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 70px;
+}
+
+.section .textAndButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
