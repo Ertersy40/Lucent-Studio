@@ -25,5 +25,5 @@ autoScroll.addEventListener('mousemove', updateCursorPosition);
 
 // Navigate to /about when clicking within the autoscroll area
 autoScroll.addEventListener('click', () => {
-  window.location.href = '/about';
+  window.location.href = '/people';
 });

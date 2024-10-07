@@ -1,5 +1,33 @@
-.Process-hero{
+.functionality {
     margin-top: calc(var(--nav-height) - 1px);
+    background-color: var(--lowlight-color);
+    color: var(--highlight-color);
+    font-family: 'poppins', sans-serif;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.functionality>* {
+    padding: 3em;
+}
+
+.functionality h2 {
+    font-family: 'poppins', sans-serif;
+    font-weight: 500;
+    letter-spacing: normal;
+}
+
+.autoScroll.dark {
+    background-color: var(--lowlight-color);
+}
+
+.autoScroll.dark .marquee span h2 {
+    color: var(--highlight-color);
+}
+
+.Process-hero{
     padding: 2rem 5rem;
     background-color: var(--lowlight-color);
     color: var(--highlight-color);
@@ -15,7 +43,7 @@
     background-color: var(--highlight-color);
     width: 2px;
     position: absolute;
-    left: calc(50vw);
+    /* left: calc(50vw); */
     top: 0;
     bottom: 0;
 }
@@ -79,8 +107,6 @@
 .step:nth-child(even) .stepNo {
     grid-column-start: 3;
 }
-
-
 
 .stepNo {
     font-size: 5rem;

@@ -1,8 +1,9 @@
 let lastKnownScrollPosition = 0;
 let ticking = false;
 
+const START_SCROLL = window.innerHeight / 4
 const MAX_ROTATION = 270;
-const MAX_SCROLL = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight ) - window.innerHeight;
+const MAX_SCROLL = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight ) - window.innerHeight - START_SCROLL;
 
 const star = document.querySelector(".Process-hero #slider .star");
 
@@ -11,7 +12,7 @@ const steps = document.querySelectorAll(".steps .step");
 // Function to determine if an element's middle is within the viewport range
 function isInViewport(element) {
   const rect = element.getBoundingClientRect();
-  const stepMiddle = rect.top + rect.height / 2;
+  const stepMiddle = rect.top + rect.height / 4;
   const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
   
   return (
@@ -20,8 +21,12 @@ function isInViewport(element) {
 }
 
 function doSomething(scrollPos) {
-//   console.log(scrollPos);
-  star.style.transform = `translateY(${scrollPos}px) rotate(${(scrollPos / MAX_SCROLL) * MAX_ROTATION}deg)`;
+  if (scrollPos < START_SCROLL) {
+    star.style.transform = 'translateY(0px) rotate(0deg)'
+    return
+  }
+
+  star.style.transform = `translateY(${scrollPos - START_SCROLL}px) rotate(${((scrollPos - START_SCROLL) / MAX_SCROLL) * MAX_ROTATION}deg)`;
 
   let glowingStep = null; // Variable to track which step should glow
 

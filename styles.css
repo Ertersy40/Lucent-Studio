@@ -1,7 +1,7 @@
 
 :root {
     --highlight-color: #FFFEEF;
-    --lowlight-color: #09182E;
+    --lowlight-color: #041022;
     --nav-height: 106px
 }
 
@@ -23,7 +23,7 @@ html, body {
 
 
 * {
-    font-family: 'poppins';
+    font-family: 'poppins', sans-serif;
 }
 
 h2, h4, a, u {
@@ -50,11 +50,12 @@ nav #homeLink {
 }
 
 nav a {
-    width: 100px;
+    font-family: 'poppins', sans-serif;
+    width: 120px;
     text-align: center;
     color: var(--highlight-color);
     font-weight: 100;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     text-decoration: none;
     transition: all 0.4s ease-in-out;
 }
@@ -178,6 +179,7 @@ nav .nav-active {
 }
 
 .hero {
+    margin-top: var(--nav-height);
     padding: 2em 5em;
     background-color: var(--lowlight-color);
     color: var(--highlight-color);
@@ -190,11 +192,11 @@ nav .nav-active {
 
 .hero h1 {
     margin-bottom: 0px;
-    font-size: min(20vw, 300px);
+    font-size: min(15vw, 150px);
 }
 
 .hero h2 {
-    font-size: 5vw;
+    font-size: min(5vw, 60px);
     font-weight: 300;
     width: 40vw;
     line-height: 1em;
