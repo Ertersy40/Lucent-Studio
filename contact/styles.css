@@ -1,0 +1,13 @@
+.hello {
+    margin-top: var(--nav-height);
+    background-color: var(--lowlight-color);
+    padding: 4em 10em;
+}
+
+.hello h1 {
+    color: var(--highlight-color);
+    margin: 0;
+    font-size: 11rem;
+    font-weight: 500;
+    font-family: 'relationship of melodrame', sans-serif;
+}
