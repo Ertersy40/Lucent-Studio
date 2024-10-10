@@ -56,7 +56,13 @@
     width: 1em;
     font-size: 10rem;
     margin-left: -4.94rem;
+    /* transition: transform 0.2s ease-in-out; */
     /* line-height: 25px; */
+}
+
+.Process-hero #slider .star.active {
+    position: fixed;
+    top: calc(50% - 160px/2);
 }
 
 .step {

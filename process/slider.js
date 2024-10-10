@@ -1,13 +1,20 @@
 let lastKnownScrollPosition = 0;
 let ticking = false;
 
-const START_SCROLL = window.innerHeight / 4
+const START_SCROLL = window.innerHeight / 2;
 const MAX_ROTATION = 270;
-const MAX_SCROLL = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight ) - window.innerHeight - START_SCROLL;
+const MAX_SCROLL = Math.max(
+  document.body.scrollHeight,
+  document.body.offsetHeight,
+  document.documentElement.clientHeight,
+  document.documentElement.scrollHeight,
+  document.documentElement.offsetHeight
+) - window.innerHeight - START_SCROLL;
 
 const star = document.querySelector(".Process-hero #slider .star");
 
 const steps = document.querySelectorAll(".steps .step");
+let currentFocusedStep = null; // Track the currently focused step
 
 // Function to determine if an element's middle is within the viewport range
 function isInViewport(element) {
@@ -22,11 +29,14 @@ function isInViewport(element) {
 
 function doSomething(scrollPos) {
   if (scrollPos < START_SCROLL) {
-    star.style.transform = 'translateY(0px) rotate(0deg)'
-    return
+    star.classList.remove("active")
+    star.style.transform = 'translateY(0px) rotate(0deg)';
+    return;
   }
 
-  star.style.transform = `translateY(${scrollPos - START_SCROLL}px) rotate(${((scrollPos - START_SCROLL) / MAX_SCROLL) * MAX_ROTATION}deg)`;
+  star.classList.add("active")
+
+  star.style.transform = ` rotate(${((scrollPos - START_SCROLL) / MAX_SCROLL) * MAX_ROTATION}deg)`;
 
   let glowingStep = null; // Variable to track which step should glow
 
@@ -36,10 +46,11 @@ function doSomething(scrollPos) {
     }
   });
 
-  // If we found a step that should glow, remove 'glow' from others and add to the correct one
-  if (glowingStep) {
+  // If a new step should glow, update the focused step
+  if (glowingStep && glowingStep !== currentFocusedStep) {
     steps.forEach((step) => step.classList.remove("focus")); // Remove glow from all steps
-    glowingStep.classList.add("focus"); // Add glow to the current step
+    glowingStep.classList.add("focus"); // Add glow to the new step
+    currentFocusedStep = glowingStep; // Update the current focused step
   }
 }
 
