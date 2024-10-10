@@ -9,7 +9,7 @@ const MAX_SCROLL = Math.max(
   document.documentElement.clientHeight,
   document.documentElement.scrollHeight,
   document.documentElement.offsetHeight
-) - window.innerHeight - START_SCROLL;
+) - window.innerHeight;
 
 const star = document.querySelector(".Process-hero #slider .star");
 
@@ -28,6 +28,7 @@ function isInViewport(element) {
 }
 
 function doSomething(scrollPos) {
+  console.log(scrollPos, '/', MAX_SCROLL)
   if (scrollPos < START_SCROLL) {
     star.classList.remove("active")
     star.style.transform = 'translateY(0px) rotate(0deg)';
@@ -36,7 +37,7 @@ function doSomething(scrollPos) {
 
   star.classList.add("active")
 
-  star.style.transform = ` rotate(${((scrollPos - START_SCROLL) / MAX_SCROLL) * MAX_ROTATION}deg)`;
+  star.style.transform = `rotate(${((scrollPos - START_SCROLL) / (MAX_SCROLL - START_SCROLL)) * MAX_ROTATION}deg)`;
 
   let glowingStep = null; // Variable to track which step should glow
 
