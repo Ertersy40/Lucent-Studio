@@ -28,7 +28,7 @@ function isInViewport(element) {
 }
 
 function doSomething(scrollPos) {
-  console.log(scrollPos, '/', MAX_SCROLL)
+  // console.log(scrollPos, '/', MAX_SCROLL)
   if (scrollPos < START_SCROLL) {
     star.classList.remove("active")
     star.style.transform = 'translateY(0px) rotate(0deg)';
