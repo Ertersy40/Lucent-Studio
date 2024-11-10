@@ -1,7 +1,7 @@
 let lastKnownScrollPosition = 0;
 let ticking = false;
 
-const START_SCROLL = window.innerHeight / 2;
+const START_SCROLL = 706 - window.innerHeight / 2 + 160 / 2;
 const MAX_ROTATION = 270;
 const MAX_SCROLL = Math.max(
   document.body.scrollHeight,
@@ -28,7 +28,7 @@ function isInViewport(element) {
 }
 
 function doSomething(scrollPos) {
-  // console.log(scrollPos, '/', MAX_SCROLL)
+  console.log(scrollPos, '/', START_SCROLL)
   if (scrollPos < START_SCROLL) {
     star.classList.remove("active")
     star.style.transform = 'translateY(0px) rotate(0deg)';

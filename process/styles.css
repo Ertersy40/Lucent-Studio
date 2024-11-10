@@ -1,4 +1,5 @@
 .functionality {
+    height: 400px;
     margin-top: calc(var(--nav-height) - 1px);
     background-color: var(--lowlight-color);
     color: var(--highlight-color);
@@ -20,6 +21,7 @@
 }
 
 .autoScroll.dark {
+    height: 200px;
     background-color: var(--lowlight-color);
 }
 
