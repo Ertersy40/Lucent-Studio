@@ -24,8 +24,10 @@
 }
 
 .page .section {
+    padding-inline: 50px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    align-items: center;
     column-gap: 70px;
     margin-block: 200px;
 }
