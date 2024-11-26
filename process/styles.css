@@ -132,3 +132,30 @@
     text-align: right;
 }
 
+
+@media only screen and (max-width: 500px) {
+    .Process-hero #slider {
+        left: 18vw;
+    }
+
+    .step:nth-child(even){
+        flex-direction: row;
+    }
+
+    .step:nth-child(odd) .stepNo {
+        text-align: left;
+    }
+
+    .step:nth-child(even) .stepDetails {
+        grid-column-start: 3;
+        grid-row-start: 1;
+        align-items: flex-end;
+    }
+    
+    .step:nth-child(even) .stepNo {
+        grid-column-start: 2;
+    }
+    .lighthouse {
+        display: none;
+    }
+}
