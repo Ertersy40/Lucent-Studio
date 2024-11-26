@@ -23,6 +23,10 @@
     width: 200px;
 }
 
+.page .section a:hover, .page .section button:hover {
+    cursor: pointer;
+}
+
 .page .section {
     padding-inline: 50px;
     display: grid;
