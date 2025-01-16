@@ -1,7 +1,23 @@
 let lastKnownScrollPosition = 0;
 let ticking = false;
 
-const START_SCROLL = 706 - window.innerHeight / 2 + 160 / 2;
+const functionality = document.querySelector('.Process-hero')
+// const introHeight = functionality.scrollHeight
+const style =  functionality.currentStyle || window.getComputedStyle(functionality)
+
+const star = document.querySelector(".Process-hero #slider .star");
+
+console.log(style.marginTop)
+
+const START_SCROLL = 0
+// const START_SCROLL = (
+//     parseInt(style.marginTop) // calc(var(--nav-height) - 1px); == 105px
+//     + (260 
+//     + - window.innerHeight 
+//     / 2 
+//     + 160 
+//     / 2)
+//   );
 const MAX_ROTATION = 270;
 const MAX_SCROLL = Math.max(
   document.body.scrollHeight,
@@ -11,7 +27,6 @@ const MAX_SCROLL = Math.max(
   document.documentElement.offsetHeight
 ) - window.innerHeight;
 
-const star = document.querySelector(".Process-hero #slider .star");
 
 const steps = document.querySelectorAll(".steps .step");
 let currentFocusedStep = null; // Track the currently focused step

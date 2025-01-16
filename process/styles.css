@@ -1,5 +1,5 @@
 .functionality {
-    height: 400px;
+    height: 100%;
     margin-top: calc(var(--nav-height) - 1px);
     background-color: var(--lowlight-color);
     color: var(--highlight-color);
@@ -30,6 +30,7 @@
 }
 
 .Process-hero{
+    margin-top: calc(var(--nav-height) - 1px);
     padding: 2rem 5rem;
     background-color: var(--lowlight-color);
     color: var(--highlight-color);
@@ -41,12 +42,20 @@
     align-items: center;
 }
 
+.Process-hero h1 {
+    width: 100%;
+    text-align: left;
+    font-size: 4em;
+    font-weight: 500;
+    font-family: 'relationship of melodrame';
+}
+
 .Process-hero #slider {
     background-color: var(--highlight-color);
     width: 2px;
     position: absolute;
     /* left: calc(50vw); */
-    top: 0;
+    top: 260px;
     bottom: 0;
 }
 
