@@ -10,7 +10,7 @@ const star = document.querySelector(".Process-hero #slider .star");
 const starStyle = star.currentStyle || window.getComputedStyle(star)
 
 
-console.log(starStyle.height)
+// console.log(starStyle.height)
 
 const START_SCROLL = 0
 // const START_SCROLL = (
@@ -48,7 +48,7 @@ function isInViewport(element) {
 }
 
 function doSomething(scrollPos) {
-  console.log(scrollPos, '/', MAX_SCROLL)
+  // console.log(scrollPos, '/', MAX_SCROLL)
   if (scrollPos < START_SCROLL) {
     star.style.transform = 'translateY(0px) rotate(0deg)';
     return;
