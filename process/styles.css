@@ -1,6 +1,6 @@
 .functionality {
     height: 100%;
-    margin-top: calc(var(--nav-height) - 1px);
+    /* margin-top: calc(var(--nav-height) - 1px); */
     background-color: var(--lowlight-color);
     color: var(--highlight-color);
     font-family: 'poppins', sans-serif;
