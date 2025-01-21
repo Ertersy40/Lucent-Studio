@@ -7,7 +7,10 @@ const style =  functionality.currentStyle || window.getComputedStyle(functionali
 
 const star = document.querySelector(".Process-hero #slider .star");
 
-console.log(style.marginTop)
+const starStyle = star.currentStyle || window.getComputedStyle(star)
+
+
+console.log(starStyle.height)
 
 const START_SCROLL = 0
 // const START_SCROLL = (
@@ -19,14 +22,16 @@ const START_SCROLL = 0
 //     / 2)
 //   );
 const MAX_ROTATION = 270;
+
 const MAX_SCROLL = Math.max(
   document.body.scrollHeight,
   document.body.offsetHeight,
   document.documentElement.clientHeight,
   document.documentElement.scrollHeight,
   document.documentElement.offsetHeight
-) - window.innerHeight;
+) - window.innerHeight - (parseInt(starStyle.height));
 
+// console.log(MAX_SCROLL)
 
 const steps = document.querySelectorAll(".steps .step");
 let currentFocusedStep = null; // Track the currently focused step
@@ -43,11 +48,16 @@ function isInViewport(element) {
 }
 
 function doSomething(scrollPos) {
-  console.log(scrollPos, '/', START_SCROLL)
+  console.log(scrollPos, '/', MAX_SCROLL)
   if (scrollPos < START_SCROLL) {
-    star.classList.remove("active")
     star.style.transform = 'translateY(0px) rotate(0deg)';
     return;
+  }
+
+  if (scrollPos > MAX_SCROLL) {
+    star.classList.remove("active")
+    star.style.transform = `translateY(${MAX_SCROLL - (parseInt(starStyle.height) / 2)}px) rotate(0deg)`;
+    return
   }
 
   star.classList.add("active")
@@ -82,3 +92,5 @@ document.addEventListener("scroll", () => {
     ticking = true;
   }
 });
+
+doSomething(window.scrollY)
