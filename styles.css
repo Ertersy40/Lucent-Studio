@@ -6,6 +6,7 @@
 }
 
 html, body {
+    background-color: var(--lowlight-color);
     margin: 0;
     padding: 0;
     scroll-behavior: smooth
@@ -42,13 +43,23 @@ h2 {
 
 nav {
     background-color: var(--lowlight-color);
-    position: absolute;
-    top: 0;
+    position: sticky;
+    top: 20px;
     width: calc(100% - 40px);
     height: calc(var(--nav-height) - 20px * 2);
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid var(--highlight-color);
+    margin: 20px;
+    z-index: 1;
+
+    
+    /* Glassmorphism */
+    background: #041022b7;
+    backdrop-filter: blur( 30px );
+    -webkit-backdrop-filter: blur( 30px );
+    border-radius: 10px;
 }
 
 nav #homeLink {
@@ -115,7 +126,6 @@ nav .contact {
 
     nav .links {
         z-index: 2;
-        background: var(--lowlight-color);
         box-shadow: 8px 0px 15px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(22px);
         -webkit-backdrop-filter: blur(22px);
@@ -185,7 +195,7 @@ nav .nav-active {
 }
 
 .hero {
-    margin-top: var(--nav-height);
+    padding-top: var(--nav-height);
     padding: 2em 5em;
     background-color: var(--lowlight-color);
     color: var(--highlight-color);
@@ -215,6 +225,19 @@ nav .nav-active {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.small.star img {
+    width: 20px;
+}
+
+nav .star img {
+    width: 40px;
+}
+
+nav .star {
+    width: 90px;
+    margin-left: 0;
 }
 
 .star img {
