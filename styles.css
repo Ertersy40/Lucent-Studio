@@ -306,6 +306,7 @@ nav .star {
 
 .detail {
     padding: 2em;
+    padding-bottom: 0;
     display: flex;
 }
 
