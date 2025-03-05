@@ -124,6 +124,10 @@ nav .contact {
         display: block;
     }
 
+    nav .contact {
+        display: none;
+    }
+
     nav .links {
         z-index: 2;
         box-shadow: 8px 0px 15px rgba(0, 0, 0, 0.1);
@@ -153,7 +157,12 @@ nav .contact {
         line-height: 50px;
     }
     nav .burger {
-        display: block;
+        width: 80px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 9px;
         z-index: 3;
     }
 }
@@ -170,7 +179,6 @@ nav .contact {
     height: 3px;
     border-radius: 2px;
     background-color: var(--highlight-color);
-    margin: 8px;
     transition: all 0.3s ease;
 }
 
