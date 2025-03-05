@@ -12,7 +12,7 @@ const starStyle = star.currentStyle || window.getComputedStyle(star)
 
 // console.log(starStyle.height)
 
-const START_SCROLL = 0
+const START_SCROLL = 169
 // const START_SCROLL = (
 //     parseInt(style.marginTop) // calc(var(--nav-height) - 1px); == 105px
 //     + (260 
@@ -23,15 +23,19 @@ const START_SCROLL = 0
 //   );
 const MAX_ROTATION = 270;
 
-const MAX_SCROLL = Math.max(
-  document.body.scrollHeight,
-  document.body.offsetHeight,
-  document.documentElement.clientHeight,
-  document.documentElement.scrollHeight,
-  document.documentElement.offsetHeight
-) - window.innerHeight - (parseInt(starStyle.height));
+let max_scroll = (document.querySelector('.Process-hero #slider').currentStyle || window.getComputedStyle(document.querySelector('.Process-hero #slider'))).height.replace('px', '')
 
-// console.log(MAX_SCROLL)
+// When screen width changes, change max_scroll:
+
+window.addEventListener("resize", function(event) {
+  console.log("Screen size changed");
+  const slider = document.querySelector('.Process-hero #slider');
+  max_scroll = parseFloat(window.getComputedStyle(slider).height);
+  console.log("Max scroll updated to ", max_scroll, "px");
+  // Re-position the star to ensure it's in the correct spot after resizing
+  positionStar(window.scrollY);
+});
+
 
 const steps = document.querySelectorAll(".steps .step");
 let currentFocusedStep = null; // Track the currently focused step
@@ -47,22 +51,22 @@ function isInViewport(element) {
   );
 }
 
-function doSomething(scrollPos) {
-  // console.log(scrollPos, '/', MAX_SCROLL)
+function positionStar(scrollPos) {
+  console.log(scrollPos, '/', max_scroll)
   if (scrollPos < START_SCROLL) {
+    star.classList.remove("active")
     star.style.transform = 'translateY(0px) rotate(0deg)';
     return;
   }
 
-  if (scrollPos > MAX_SCROLL) {
+  if (scrollPos > max_scroll) {
     star.classList.remove("active")
-    star.style.transform = `translateY(${MAX_SCROLL - (parseInt(starStyle.height) / 2)}px) rotate(0deg)`;
+    star.style.transform = `translateY(${max_scroll - (parseInt(starStyle.height) / 1) - 8}px) rotate(0deg)`;
     return
   }
-
   star.classList.add("active")
 
-  star.style.transform = `rotate(${((scrollPos - START_SCROLL) / (MAX_SCROLL - START_SCROLL)) * MAX_ROTATION}deg)`;
+  star.style.transform = `rotate(${((scrollPos - START_SCROLL) / (max_scroll - START_SCROLL)) * MAX_ROTATION}deg)`;
 
   let glowingStep = null; // Variable to track which step should glow
 
@@ -85,7 +89,7 @@ document.addEventListener("scroll", () => {
 
   if (!ticking) {
     window.requestAnimationFrame(() => {
-      doSomething(lastKnownScrollPosition);
+      positionStar(lastKnownScrollPosition);
       ticking = false;
     });
 
@@ -93,4 +97,4 @@ document.addEventListener("scroll", () => {
   }
 });
 
-doSomething(window.scrollY)
+positionStar(window.scrollY)

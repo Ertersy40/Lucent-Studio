@@ -44,8 +44,9 @@
 
 .Process-hero h1 {
     width: 100%;
+    margin-block: 0;
     text-align: left;
-    font-size: 4em;
+    font-size: 7.5em;
     font-weight: 500;
     font-family: 'relationship of melodrame';
 }
