@@ -62,6 +62,31 @@ nav {
     border-radius: 10px;
 }
 
+nav .links li {
+    position: relative;
+}
+nav .links li::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--highlight-color);
+    transition: transform 0.25s ease-out;
+}
+
+nav .links li:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom right;
+}
+
+nav .links li::after {
+    transform-origin: bottom left;
+}
+
+
 nav #homeLink {
     display: none;
 }
