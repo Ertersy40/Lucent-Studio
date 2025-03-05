@@ -129,6 +129,9 @@ nav .contact {
     }
 
     nav .links {
+        margin-left: -22px;
+        margin-top: -24px;
+        overflow: hidden;
         z-index: 2;
         box-shadow: 8px 0px 15px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(22px);
@@ -138,12 +141,12 @@ nav .contact {
         padding-top: 70px;
         position: fixed;
         left: 0px;
-        height: 100vh;
+        height: 133vh;
         top: 0;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
+        width: 101vw;
         transform: translateY(-100%);
         transition: transform 0.5s ease-in-out;
     }
@@ -183,6 +186,7 @@ nav .contact {
 }
 
 nav .nav-active {
+    background: var(--lowlight-color);
     transform: translateX(0%);
 }
 
