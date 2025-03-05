@@ -249,6 +249,10 @@ nav .nav-active {
     display: flex;
 }
 
+.detail p {
+    font-weight: 500;
+}
+
 .detail button {
     background-color: var(--lowlight-color);
     border: 2px solid var(--lowlight-color);
