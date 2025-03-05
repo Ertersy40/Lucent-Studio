@@ -319,8 +319,9 @@ nav .star {
     overflow: hidden;
     position: relative;
     display: inline-block;
-    border-radius: 20px;
-    padding: 0.4em 1em;
+    border-radius: 40px;
+    font-weight: 600;
+    padding: 0.8em 1.1em 0.8em 1em;
 }
 
 .detail button img {
@@ -331,6 +332,8 @@ nav .star {
 }
 
 .detail button span {
+    display: flex;
+    align-items: center;
     mix-blend-mode: difference;
     text-wrap: nowrap;
     color: var(--highlight-color);
@@ -356,6 +359,12 @@ nav .star {
 
 .detail button:hover {
     cursor: pointer;
+}
+
+.whatWeBring h3 {
+    font-weight: 500;
+    font-size: 1.7rem;
+    margin-block: 10px 0px;
 }
 
 .features {
