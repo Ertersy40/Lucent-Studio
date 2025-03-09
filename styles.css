@@ -305,13 +305,17 @@ nav .star {
 }
 
 .detail {
-    padding: 2em;
+    padding: 4em;
     padding-bottom: 0;
     display: flex;
 }
 
 .detail p {
     font-weight: 500;
+}
+
+.detail .features p {
+    margin-block: 0px;
 }
 
 .detail button {
@@ -380,8 +384,9 @@ nav .star {
 
 .feature h4 {
     font-weight: 200;
-    font-size: 1.8em;
+    font-size: 2em;
     margin: 0;
+    margin-top: 0.4em;
 }
 
 .autoScroll {
