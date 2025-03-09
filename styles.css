@@ -50,7 +50,7 @@ nav {
     display: flex;
     justify-content: space-between;
     border-radius: 20px;
-    border: 1px solid var(--highlight-color);
+    border: 1.5px solid var(--highlight-color);
     margin: 20px;
     z-index: 1;
 
