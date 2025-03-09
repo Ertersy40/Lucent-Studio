@@ -117,6 +117,7 @@ nav .links {
     padding: 0;
     display: flex;
     width: 29%;
+    max-width: 300px;
     align-items: center;
     justify-content: space-between;
 }
