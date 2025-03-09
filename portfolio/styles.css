@@ -1,5 +1,4 @@
 .page {
-    margin-top: calc(var(--nav-height) - 1px);
     background-color: var(--lowlight-color);
     padding: 3em;
 }
@@ -10,7 +9,8 @@
 
 .page h1 {
     margin: 0;
-    font-size: 7rem;
+    margin-left: 50px;
+    font-size: 9rem;
     font-weight: 500;
     font-family: 'relationship of melodrame', sans-serif;
 }
@@ -33,7 +33,7 @@
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     column-gap: 70px;
-    margin-block: 200px;
+    margin-block: 68px;
 }
 
 .page .section h2 {
