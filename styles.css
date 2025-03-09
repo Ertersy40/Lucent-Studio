@@ -321,13 +321,13 @@ nav .star {
 
 .detail button {
     background-color: var(--lowlight-color);
-    border: 2px solid var(--lowlight-color);
+    border: 1.5px solid var(--lowlight-color);
     overflow: hidden;
     position: relative;
     display: inline-block;
     border-radius: 40px;
     font-weight: 600;
-    padding: 0.8em 1.1em 0.8em 1em;
+    padding: 1em 1.6em 1em 1.7em;
 }
 
 .detail button img {
