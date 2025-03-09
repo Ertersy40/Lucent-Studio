@@ -319,7 +319,7 @@ nav .star {
     margin-block: 0px;
 }
 
-.detail button {
+.fancyArrowButton {
     background-color: var(--lowlight-color);
     border: 1.5px solid var(--lowlight-color);
     overflow: hidden;
@@ -330,14 +330,24 @@ nav .star {
     padding: 1em 1.6em 1em 1.7em;
 }
 
-.detail button img {
+.fancyArrowButton.inverted {
+    background-color: var(--highlight-color);
+    border: 1.5px solid var(--highlight-color);
+}
+
+.fancyArrowButton img {
     width: 30px;
     height: 12px;
     fill: #09182E;
     mix-blend-mode: difference;
 }
 
-.detail button span {
+.fancyArrowButton.inverted img {
+    fill: var(--highlight-color);
+}
+
+
+.fancyArrowButton span {
     display: flex;
     align-items: center;
     mix-blend-mode: difference;
@@ -345,7 +355,11 @@ nav .star {
     color: var(--highlight-color);
 }
 
-.detail button::before {
+.fancyArrowButton.inverted span {
+    color: white;
+}
+
+.fancyArrowButton::before {
     position: absolute;
     top: 0;
     left: 0;
@@ -359,11 +373,16 @@ nav .star {
     transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
 }
 
-.detail button:hover::before {
+.fancyArrowButton.inverted::before {
+    background: var(--lowlight-color);
+}
+
+
+.fancyArrowButton:hover::before {
     transform: translate3d(100%, 0, 0);
 }
 
-.detail button:hover {
+.fancyArrowButton:hover {
     cursor: pointer;
 }
 
