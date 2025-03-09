@@ -393,7 +393,7 @@ nav .star {
 .autoScroll {
     display: flex;
     align-items: center;
-    height: 200px;
+    height: 250px;
     position: relative;
     overflow: hidden;
     width: 100%; /* Adjust the width as needed */
