@@ -85,7 +85,7 @@
     width: calc(100svw - 100px * 2 - 17px);
     justify-content: center;
     transition: all 0.2s ease-in-out;
-    padding-bottom: 200px;
+    padding-bottom: 50px;
 }
 
 .stepPadding {
