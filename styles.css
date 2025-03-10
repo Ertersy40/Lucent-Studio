@@ -59,7 +59,6 @@ nav {
     background: #041022b7;
     backdrop-filter: blur( 30px );
     -webkit-backdrop-filter: blur( 30px );
-    border-radius: 10px;
 }
 
 nav .links li {
