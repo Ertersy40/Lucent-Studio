@@ -30,7 +30,7 @@
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     column-gap: 70px;
-    margin-block: 68px;
+    margin-block: 130px;
 }
 
 .page .section h2 {
@@ -41,4 +41,18 @@
     padding: 10px;
     border: 2px solid var(--highlight-color);
     border-radius: 20px;
+}
+
+
+.page h3 {
+    cursor: pointer;
+    text-align: center;
+    font-size: 3em;
+}
+
+.page h3 img {
+    height: 20px;
+    border: 2px solid white;
+    border-radius: calc(1px* infinity);
+    padding: 10px 6px;
 }
