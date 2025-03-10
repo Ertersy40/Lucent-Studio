@@ -12,7 +12,7 @@ const starStyle = star.currentStyle || window.getComputedStyle(star)
 
 // console.log(starStyle.height)
 
-const START_SCROLL = 169
+const START_SCROLL = 120
 // const START_SCROLL = (
 //     parseInt(style.marginTop) // calc(var(--nav-height) - 1px); == 105px
 //     + (260 
@@ -23,7 +23,7 @@ const START_SCROLL = 169
 //   );
 const MAX_ROTATION = 270;
 
-let max_scroll = (document.querySelector('.Process-hero #slider').currentStyle || window.getComputedStyle(document.querySelector('.Process-hero #slider'))).height.replace('px', '')
+let max_scroll = parseInt((document.querySelector('.Process-hero #slider').currentStyle || window.getComputedStyle(document.querySelector('.Process-hero #slider'))).height.replace('px', '')) - 0
 
 // When screen width changes, change max_scroll:
 
