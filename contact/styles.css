@@ -1,5 +1,4 @@
 .hello {
-    margin-top: var(--nav-height);
     background-color: var(--lowlight-color);
     padding: 4em 10em;
 }
@@ -73,4 +72,67 @@
     color: var(--highlight-color);
     width: 150px;
     border-radius: 20px;
+}
+
+@media only screen and (max-width: 1345px) {
+    .messageForm{
+        right: calc(50% - (542px / 2));
+        top: calc(280px + 392px + var(--nav-height));
+        max-width: 542px;
+    }
+
+    .message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 500px;
+    }
+    .message .socialImages {
+        width: 100px;
+        margin-top: 1rem;
+    }
+
+    .message>* {
+        width: 200px;
+        text-align: center;
+    }
+    .message .emailh, .message .connecth {
+        display: none;
+    }
+
+    footer {
+        padding-top: 350px;
+    }
+}
+
+@media only screen and (max-width: 965px) {
+    .hello h1 {
+        font-size: 7.5rem;
+    }
+    .messageForm{
+        top: calc(180px + 392px + var(--nav-height));
+    }
+
+    .hello, .message {
+        padding: 4em 4em;
+    }
+}
+
+@media only screen and (max-width: 624px) {
+    .messageForm {
+        top: calc(120px + 392px + var(--nav-height));
+        left: 20px;
+        margin-right: 20px;
+        width: calc(100vw - 40px);
+        max-width: none;
+    }
+
+    .hello {
+        padding-inline: 30px;
+        
+    }
+
+    .hello h1 {
+        font-size: 5rem;
+    }
 }
