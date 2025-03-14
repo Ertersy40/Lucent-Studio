@@ -57,6 +57,7 @@
 
 .message {
     padding: 4em 10em;
+    background-color: var(--highlight-color);
 }
 
 /* TODO: Make these icons visible somehow */
