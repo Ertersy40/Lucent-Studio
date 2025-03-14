@@ -15,7 +15,7 @@
     font-family: 'relationship of melodrame', sans-serif;
 }
 
-.page .section button {
+.page .section button:not(.fancyArrowButton) {
     background-color: var(--lowlight-color);
     border: 2px solid var(--highlight-color);
     padding: 0.7em;
@@ -36,6 +36,7 @@
 }
 
 .section .textAndButton {
+    color: var(--highlight-color);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
