@@ -1,100 +1,47 @@
-let lastKnownScrollPosition = 0;
-let ticking = false;
+// slider.js
+document.addEventListener('DOMContentLoaded', () => {
+  const star     = document.querySelector('#slider .star');
+  const slider   = document.getElementById('slider');
+  const steps    = Array.from(document.querySelectorAll('.step'));
+  const root     = getComputedStyle(document.documentElement);
+  const offset   = parseFloat(root.fontSize) * 5; // 5rem in px
+  const vh       = window.innerHeight;
 
-const functionality = document.querySelector('.Process-hero')
-// const introHeight = functionality.scrollHeight
-const style =  functionality.currentStyle || window.getComputedStyle(functionality)
+  function onScroll() {
+    const rect   = slider.getBoundingClientRect();
+    const center = vh / 2;
 
-const star = document.querySelector(".Process-hero #slider .star");
+    // --- STAR SPIN + MARGIN INTERPOLATION ---
+    const start    = rect.top + offset;
+    const end      = rect.bottom - (offset / 1.5);
+    let progress   = (center - start) / (end - start);
+    progress       = Math.min(Math.max(progress, 0), 1);
 
-const starStyle = star.currentStyle || window.getComputedStyle(star)
+    star.style.transform   = `rotate(${progress * 180}deg)`;
+    star.style.marginLeft  = `${-2 + progress * 4}px`;
 
+    // --- STEP FOCUS HANDLING ---
+    // find the step whose center is closest to viewport center
+    let bestStep    = null;
+    let bestDistance = Infinity;
 
-// console.log(starStyle.height)
+    steps.forEach(step => {
+      const r        = step.getBoundingClientRect();
+      const stepMid  = r.top + r.height / 2;
+      const distance = Math.abs(stepMid - center);
 
-const START_SCROLL = 120
-// const START_SCROLL = (
-//     parseInt(style.marginTop) // calc(var(--nav-height) - 1px); == 105px
-//     + (260 
-//     + - window.innerHeight 
-//     / 2 
-//     + 160 
-//     / 2)
-//   );
-const MAX_ROTATION = 270;
-
-let max_scroll = parseInt((document.querySelector('.Process-hero #slider').currentStyle || window.getComputedStyle(document.querySelector('.Process-hero #slider'))).height.replace('px', '')) - 0
-
-// When screen width changes, change max_scroll:
-
-window.addEventListener("resize", function(event) {
-  console.log("Screen size changed");
-  const slider = document.querySelector('.Process-hero #slider');
-  max_scroll = parseFloat(window.getComputedStyle(slider).height);
-  console.log("Max scroll updated to ", max_scroll, "px");
-  // Re-position the star to ensure it's in the correct spot after resizing
-  positionStar(window.scrollY);
-});
-
-
-const steps = document.querySelectorAll(".steps .step");
-let currentFocusedStep = null; // Track the currently focused step
-
-// Function to determine if an element's middle is within the viewport range
-function isInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  const stepMiddle = rect.top + rect.height / 4;
-  const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-  
-  return (
-    stepMiddle > viewportHeight * 0 && stepMiddle < viewportHeight * 0.6
-  );
-}
-
-function positionStar(scrollPos) {
-  console.log(scrollPos, '/', max_scroll)
-  if (scrollPos < START_SCROLL) {
-    star.classList.remove("active")
-    star.style.transform = 'translateY(0px) rotate(0deg)';
-    return;
-  }
-
-  if (scrollPos > max_scroll) {
-    star.classList.remove("active")
-    star.style.transform = `translateY(${max_scroll - (parseInt(starStyle.height) / 1) - 8}px) rotate(0deg)`;
-    return
-  }
-  star.classList.add("active")
-
-  star.style.transform = `rotate(${((scrollPos - START_SCROLL) / (max_scroll - START_SCROLL)) * MAX_ROTATION}deg)`;
-
-  let glowingStep = null; // Variable to track which step should glow
-
-  steps.forEach((step) => {
-    if (isInViewport(step)) {
-      glowingStep = step; // Mark this step as the one that should glow
-    }
-  });
-
-  // If a new step should glow, update the focused step
-  if (glowingStep && glowingStep !== currentFocusedStep) {
-    steps.forEach((step) => step.classList.remove("focus")); // Remove glow from all steps
-    glowingStep.classList.add("focus"); // Add glow to the new step
-    currentFocusedStep = glowingStep; // Update the current focused step
-  }
-}
-
-document.addEventListener("scroll", () => {
-  lastKnownScrollPosition = window.scrollY;
-
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      positionStar(lastKnownScrollPosition);
-      ticking = false;
+      if (distance < bestDistance) {
+        bestDistance  = distance;
+        bestStep      = step;
+      }
     });
 
-    ticking = true;
+    // add 'focus' only to that bestStep
+    steps.forEach(s => s.classList.toggle('focus', s === bestStep));
   }
-});
 
-positionStar(window.scrollY)
+  // wire it up
+  window.addEventListener('scroll', onScroll);
+  // also run once in case you start mid-page
+  onScroll();
+});

@@ -51,26 +51,28 @@
     font-family: 'relationship of melodrame';
 }
 
+.stepContainer {
+    position: relative;
+}
+
 .Process-hero #slider {
     background-color: var(--highlight-color);
     width: 2px;
     position: absolute;
-    /* left: calc(50vw); */
-    top: 300px;
+    left: calc(50vw);
+    top: 0;
     bottom: 0;
 }
 
+
 .Process-hero #slider .star {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height:1em;
-    width: 1em;
-    font-size: 10rem;
-    margin-left: -4.94rem;
-    /* transition: transform 0.1s ease-in-out; */
-    /* line-height: 25px; */
-}
+    margin-left: -2px;
+    position: sticky;
+    top: calc(50% - 5rem); /* half of your star’s rendered height */
+    left: -4.94rem;        /* your existing horizontal offset */
+    transform-origin: center center;
+    transition: 0.05s linear;
+  }
 
 .Process-hero #slider .star.active {
     position: fixed;
