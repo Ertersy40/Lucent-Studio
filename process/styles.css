@@ -145,9 +145,17 @@
 }
 
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 760px) {
+    .Process-hero h1 {
+        font-size: 7em;
+    }
+
     .Process-hero #slider {
         left: 18vw;
+    }
+
+    .step {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     .step:nth-child(even){
@@ -164,9 +172,25 @@
         align-items: flex-end;
     }
     
-    .step:nth-child(even) .stepNo {
+    .step .stepNo, .step:nth-child(even) .stepNo {
         grid-column-start: 2;
     }
+
+    .functionality {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+
+    .Process-hero h1 {
+        font-size: 5em;
+    
+    }
+
     .lighthouse {
         display: none;
     }
