@@ -233,27 +233,29 @@ nav .nav-active {
 
 .hero {
     padding-top: var(--nav-height);
-    padding: 2em 5em;
+    padding: 2em 3em;
     background-color: var(--lowlight-color);
     color: var(--highlight-color);
     text-align: center;
+    height: 70vh;
 
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
 }
 
 .hero h1 {
     display: flex;
-    margin-bottom: 0px;
+    margin-block: 0px;
     font-weight: 500;
-    font-size: min(15vw, 150px);
+    font-size: min(19vw, 150px);
 }
 
 .hero h2 {
-    font-size: min(5vw, 60px);
+    font-size: min(11vw, 60px);
     font-weight: 300;
-    width: 40vw;
+    width: 90vw;
     line-height: 1em;
 }
 
@@ -528,7 +530,7 @@ footer a {
     }
 }
 
-@media only screen and (max-width: 695px) {
+@media only screen and (max-width: 1100px) {
     
     .detail {
         flex-direction: column;
@@ -540,6 +542,18 @@ footer a {
     }
 
     .feature:nth-child(odd) {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 571px) {
+    .features {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature {
         margin-left: 0;
     }
 }
