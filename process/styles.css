@@ -115,6 +115,8 @@
 }
 
 .step .stepDetails .stepTitle {
+    font-size: 4rem;
+    font-weight: 100;
     width: min(100%, 450px);
 }
 
@@ -151,19 +153,29 @@
     }
 
     .Process-hero #slider {
-        left: 18vw;
+        left: calc(5em + -49px);
     }
+    .stepNo, .stepTitle {
+        margin-block: 0;
+    }
+    .step .stepDetails .stepTitle {
+        letter-spacing: 2px;
+        font-size: 2.5rem;
+    }
+    
 
     .step {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .step:nth-child(even){
-        flex-direction: row;
+        margin-left: 50px;
+        padding-right: 0;
+        display: flex;
+        flex-direction: column;
     }
 
     .step:nth-child(odd) .stepNo {
         text-align: left;
+    }
+    .step:nth-child(even){
+        flex-direction: column;
     }
 
     .step:nth-child(even) .stepDetails {
@@ -172,9 +184,7 @@
         align-items: flex-end;
     }
     
-    .step .stepNo, .step:nth-child(even) .stepNo {
-        grid-column-start: 2;
-    }
+
 
     .functionality {
         display: flex;
@@ -183,12 +193,16 @@
         justify-content: center;
     }
 }
-
-@media only screen and (max-width: 460px) {
+@media only screen and (max-width: 623px) {
 
     .Process-hero h1 {
         font-size: 5em;
-    
+    }
+}
+@media only screen and (max-width: 495px) {
+
+    .Process-hero h1 {
+        font-size: 3.5em;
     }
 
     .lighthouse {
