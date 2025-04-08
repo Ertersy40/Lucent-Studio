@@ -556,4 +556,8 @@ footer a {
     .feature {
         margin-left: 0;
     }
+
+    .feature h4 {
+        margin-top: 1em;
+    }
 }
