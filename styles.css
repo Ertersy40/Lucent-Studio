@@ -154,6 +154,7 @@ nav .contact {
     }
 
     nav .links {
+        max-width: none;
         margin-left: -22px;
         margin-top: -24px;
         overflow: hidden;
