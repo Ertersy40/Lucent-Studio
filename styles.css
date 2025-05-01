@@ -495,7 +495,6 @@ nav .star {
 footer {
     background-color: var(--lowlight-color);
     color: var(--highlight-color);
-    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -509,7 +508,12 @@ footer a {
     text-decoration: none;
 }
 
+footer .star img {
+    height: 30px;
+}
+
 .socials {
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -517,6 +521,7 @@ footer a {
 }
 
 .socialImages{
+    margin-top: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
