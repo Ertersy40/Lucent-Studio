@@ -245,8 +245,7 @@ nav .nav-active {
     background-color: var(--lowlight-color);
     color: var(--highlight-color);
     text-align: center;
-    height: 70vh;
-
+    min-height: 70vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
