@@ -26,8 +26,10 @@ html, body {
     font-family: 'poppins', sans-serif;
 }
 
-h2, h4, a, u {
-    font-family: "relationship of melodrame";
+h2, h4, u {
+    letter-spacing: 1px;
+    font-family: "Instrument Serif";
+    font-style: italic;
     text-decoration-thickness: 1.5px;
     text-underline-offset: 6px;
     text-decoration-skip-ink: all;
@@ -116,7 +118,7 @@ nav .links {
     padding: 0;
     display: flex;
     width: 29%;
-    max-width: 300px;
+    max-width: 330px;
     align-items: center;
     justify-content: space-between;
 }
