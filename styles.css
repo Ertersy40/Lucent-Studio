@@ -12,15 +12,6 @@ html, body {
     scroll-behavior: smooth
 }
 
-@font-face {
-    font-family: 'relationship of melodrame';
-    src: url('/Assets/Fonts/relationshipofmelodrame-regul.woff2') format('woff2'),
-        url('/Assets/Fonts/relationshipofmelodrame-regul.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
 
 * {
     font-family: 'poppins', sans-serif;
@@ -124,8 +115,8 @@ nav .links {
 }
 
 nav .selected {
-    text-decoration: underline;
-    text-shadow: 0px 0px 10px var(--highlight-color);
+    /* text-decoration: underline; */
+    text-shadow: 0px 0px 15px var(--highlight-color);
 }
 
 nav .links li {
@@ -244,10 +235,11 @@ nav .nav-active {
 .hero {
     padding-top: var(--nav-height);
     padding: 2em 3em;
+    padding-bottom: 14px;
     background-color: var(--lowlight-color);
     color: var(--highlight-color);
     text-align: center;
-    min-height: 70vh;
+    min-height: calc(100vh - var(--nav-height) - 60px);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -258,11 +250,12 @@ nav .nav-active {
     display: flex;
     margin-block: 0px;
     font-weight: 500;
-    font-size: min(19vw, 150px);
+    font-size: min(19vw, 130px);
 }
 
 .hero h2 {
-    font-size: min(11vw, 60px);
+    font-size: min(11vw, 40px);
+    letter-spacing: 0px;
     font-weight: 300;
     width: 90vw;
     line-height: 1em;
@@ -358,6 +351,8 @@ nav .star {
 
 
 .fancyArrowButton span {
+    font-size: 0.9rem;
+    font-weight: 500;
     display: flex;
     align-items: center;
     mix-blend-mode: difference;
@@ -402,6 +397,10 @@ nav .star {
     margin-block: 10px 0px;
 }
 
+.whatWeBring .fancyArrowButton {
+    margin-top: 10px;
+}
+
 .features {
     margin-left: 30px;
     display: grid;
@@ -413,10 +412,12 @@ nav .star {
 }
 
 .feature h4 {
+    letter-spacing: 0;
     font-weight: 200;
     font-size: 2em;
     margin: 0;
     margin-top: 0.4em;
+    margin-bottom: 0.33em;
 }
 
 .autoScroll {
@@ -445,11 +446,11 @@ nav .star {
 .marquee span {
     display: inline-block;
     padding-left: 100%;
-    animation: marquee 110s linear infinite;
+    animation: marquee 150s linear infinite;
 }
 
 .marquee1 span {
-    animation-delay: -55s;
+    animation-delay: -175s;
 }
 
 .marquee2 span {

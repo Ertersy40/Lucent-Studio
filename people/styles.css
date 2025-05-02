@@ -11,7 +11,8 @@
     margin: 0;
     font-size: 7rem;
     font-weight: 500;
-    font-family: 'relationship of melodrame', sans-serif;
+    font-family: "Instrument Serif", sans-serif;
+    font-style: italic;
 }
 
 .page .section button:not(.fancyArrowButton) {
