@@ -45,6 +45,7 @@
 
 .messageForm form input::placeholder, .messageForm form textarea::placeholder {
     color: var(--highlight-color);
+    opacity: 70%;
 }
 
 .messageForm form {
