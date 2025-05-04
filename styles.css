@@ -74,6 +74,11 @@ nav .links li:hover::after {
     transform-origin: bottom right;
 }
 
+nav .links .selected::after {
+    transform: scaleX(1);
+    
+}
+
 nav .links li::after {
     transform-origin: bottom left;
 }
@@ -113,11 +118,11 @@ nav .links {
     align-items: center;
     justify-content: space-between;
 }
-
-nav .selected {
-    /* text-decoration: underline; */
-    text-shadow: 0px 0px 15px var(--highlight-color);
+nav .selected a {
+    text-shadow: 0 0 20px var(--highlight-color);
 }
+
+
 
 nav .links li {
     list-style: none;
@@ -257,7 +262,7 @@ nav .nav-active {
     letter-spacing: 0px;
     font-weight: 300;
     width: 90vw;
-    line-height: 1em;
+    line-height: 1.2em;
 }
 
 .star {
@@ -281,7 +286,7 @@ nav .star {
 }
 
 .star img {
-    height: min(15vw, 130px);
+    height: min(15vw, 100px);
 }
 
 .glow img {
@@ -474,7 +479,7 @@ nav .star {
     width: 38px; /* Adjust size as needed */
     height: 38px;
     background-color: var(--highlight-color);
-    border: 2px solid var(--lowlight-color);
+    border: 1.5px solid var(--lowlight-color);
     border-radius: 25px;
     background-size: contain;
     pointer-events: none; /* Allow clicks to pass through */
