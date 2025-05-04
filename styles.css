@@ -549,6 +549,8 @@ footer .star img {
     
     .detail {
         flex-direction: column;
+        padding-inline: 30px;
+    
     }
 
     .features {
