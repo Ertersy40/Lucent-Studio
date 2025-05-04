@@ -230,7 +230,7 @@ nav .nav-active {
 }
 
 .toggle .line1 {
-    transform: translateY(12px) rotate(-45deg) ;
+    transform: translateY(4px) rotate(-45deg) ;
 }
 
 .toggle .line2 {
@@ -238,7 +238,7 @@ nav .nav-active {
 }
 
 .toggle .line3 {
-    transform: translateY(-10px) rotate(45deg)
+    transform: translateY(-12px) rotate(45deg)
 }
 
 .hero {

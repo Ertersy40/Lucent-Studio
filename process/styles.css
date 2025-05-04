@@ -209,6 +209,10 @@ body .theBenefits h2 {
         font-size: 7em;
     }
 
+    .stepNo {
+        font-size: 6.5rem;
+    }
+
     .Process-hero #slider {
         left: calc(5em + -49px);
     }
