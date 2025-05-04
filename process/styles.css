@@ -42,12 +42,14 @@
 }
 
 .Process-hero h1 {
+    color: var(--highlight-color);
+    font-size: 11rem;
+    font-weight: 500;
+    font-style: italic;
     width: 100%;
     margin-top: 0px;
     margin-bottom: 40px;
     text-align: left;
-    font-size: 9.5em;
-    font-weight: 500;
     font-family: "Instrument Serif";
     font-style: italic;
 }
