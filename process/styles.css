@@ -1,8 +1,17 @@
-.functionality {
+.theBenefits{
+    color: var(--highlight-color);
+}
+
+body .theBenefits h2 {
+    margin-top: 55px;
+    margin-left: 5rem;
+}
+
+
+.benefits {
     height: 100%;
     /* margin-top: calc(var(--nav-height) - 1px); */
     background-color: var(--lowlight-color);
-    color: var(--highlight-color);
     font-family: 'poppins', sans-serif;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -10,14 +19,23 @@
     justify-items: center;
 }
 
-.functionality>* {
-    padding: 3em;
+.benefit {
+    padding: 0 3em;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-.functionality h2 {
+.benefits h3 {
     font-family: 'poppins', sans-serif;
+    font-size: 1.45rem;
     font-weight: 500;
     letter-spacing: normal;
+    border: 1.5px solid var(--highlight-color);
+    width: fit-content;
+    padding: 14px 21px;
+    border-radius: 50px;
 }
 
 .autoScroll.dark {
@@ -41,7 +59,7 @@
     align-items: center;
 }
 
-.Process-hero h1 {
+.Process-hero h1, .theBenefits h2 {
     color: var(--highlight-color);
     font-size: 11rem;
     font-weight: 500;
@@ -151,7 +169,7 @@
 
 
 @media only screen and (max-width: 760px) {
-    .Process-hero h1 {
+    .Process-hero h1, .theBenefits h2 {
         font-size: 7em;
     }
 
@@ -189,7 +207,7 @@
     
 
 
-    .functionality {
+    .benefits {
         display: flex;
         flex-direction: column;
         align-items: center;
