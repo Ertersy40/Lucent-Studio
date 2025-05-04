@@ -2,7 +2,7 @@
 :root {
     --highlight-color: #FFFEEF;
     --lowlight-color: #041022;
-    --nav-height: 106px
+    --nav-height: 80px
 }
 
 html, body {
@@ -549,8 +549,8 @@ footer .star img {
     
     .detail {
         flex-direction: column;
-        padding-inline: 30px;
-    
+        padding-inline: 25px;
+        padding-top: 25px;
     }
 
     .features {
