@@ -64,6 +64,7 @@
 .ownProject {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 12px; /* Adjust spacing as needed */
     flex-wrap: wrap;
 }
