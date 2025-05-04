@@ -72,8 +72,8 @@
     background-color: transparent;
     border: 2px solid var(--highlight-color);
     color: var(--highlight-color);
-    width: 150px;
-    border-radius: 20px;
+    
+    width: fit-content;
 }
 
 @media only screen and (max-width: 1345px) {
