@@ -191,7 +191,7 @@ nav .links #contact {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 9px;
+        gap: 6px;
         z-index: 3;
     }
 }
@@ -204,9 +204,8 @@ nav .links #contact {
 }
 
 .burger div {
-    width: 40px;
-    height: 3px;
-    border-radius: 2px;
+    width: 27px;
+    height: 2px;
     background-color: var(--highlight-color);
     transition: all 0.3s ease;
 }
