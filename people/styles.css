@@ -17,7 +17,7 @@
 
 .page .section button:not(.fancyArrowButton) {
     background-color: var(--lowlight-color);
-    border: 2px solid var(--highlight-color);
+    border: 1.5px solid var(--highlight-color);
     padding: 0.7em;
     border-radius: 20px;
     width: 200px;

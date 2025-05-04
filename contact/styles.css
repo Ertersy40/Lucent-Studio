@@ -70,7 +70,7 @@
 
 .messageForm form button {
     background-color: transparent;
-    border: 2px solid var(--highlight-color);
+    border: 1.5px solid var(--highlight-color);
     color: var(--highlight-color);
     
     width: fit-content;
