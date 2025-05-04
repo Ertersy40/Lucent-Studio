@@ -108,30 +108,35 @@
 }
 
 @media only screen and (max-width: 988px) {
+    .hello h1 {
+        font-size: 7.5rem;
+    }
+
     .messageForm{
-        right: calc(50% - (542px / 2));
-        top: calc(280px + 392px + var(--nav-height));
+        right: calc(50% - (425px / 2));
+        top: calc(280px + 320px + var(--nav-height));
         max-width: 542px;
     }
 
     .message {
+        min-height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 500px;
+        height: 420px;
     }
     .message .socialImages {
-        width: 100px;
+        width: 100;
         margin-top: 1rem;
     }
 
     .message>* {
-        width: 200px;
+        width: 260px;
         text-align: center;
     }
-    .message .emailh, .message .connecth {
+    /* .message .emailh, .message .connecth {
         display: none;
-    }
+    } */
 
     footer {
         padding-top: 350px;
@@ -143,7 +148,7 @@
         font-size: 7.5rem;
     }
     .messageForm{
-        top: calc(180px + 392px + var(--nav-height));
+        top: calc(180px + 400px + var(--nav-height));
     }
 
     .hello, .message {
@@ -153,7 +158,7 @@
 
 @media only screen and (max-width: 624px) {
     .messageForm {
-        top: calc(120px + 392px + var(--nav-height));
+        top: calc(120px + 420px + var(--nav-height));
         left: 20px;
         margin-right: 20px;
         width: calc(100vw - 40px);
@@ -167,5 +172,15 @@
 
     .hello h1 {
         font-size: 5rem;
+    }
+}
+
+
+@media only screen and (max-width: 320px) {
+    .hello h1 {
+        font-size: 4rem;
+    }
+    .message {
+        min-height: calc(100vh - var(--nav-height) - 242px - 88px - (4em * 2) - 5px);
     }
 }

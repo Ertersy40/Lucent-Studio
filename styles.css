@@ -30,6 +30,11 @@ a {
     color: var(--lowlight-color);
 }
 
+p {
+    font-size: 1.1rem;
+    line-height: 1.6em;
+}
+
 h2 {
     letter-spacing: 3px;
 }
@@ -313,7 +318,7 @@ nav .star {
 }
 
 .detail {
-    padding: 3em 4em;
+    padding: 3em 6.13em;
     padding-bottom: 0;
     display: flex;
 }
@@ -539,7 +544,7 @@ footer .star img {
     }
 }
 
-@media only screen and (max-width: 695px) {
+@media only screen and (max-width: 860px) {
     footer .socials p {
         display: none;
     }
