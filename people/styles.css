@@ -33,6 +33,10 @@
     align-items: center;
 }
 
+.section .fancyArrowButton {
+    margin-top: 15px;
+}
+
 .profiles {
     margin-top: 50px;
     display: flex;
@@ -56,13 +60,6 @@ p b {
 
 p{
     line-height: 1.6em;
-}
-.profiles .section2 {
-    /* margin-bottom: 100px; */
-}
-
-.profiles .section3 {
-    /* margin-top: 100px; */
 }
 
 .profiles .img-mobile {
@@ -90,6 +87,7 @@ p{
         font-size: 5rem;
     }
     .page {
+        padding-inline: 3em;
         flex-direction: column;
     }
 
