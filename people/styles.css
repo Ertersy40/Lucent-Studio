@@ -76,6 +76,14 @@ p{
 }
 
 @media only screen and (max-width: 776px) {
+    .page {
+        padding-top: 1.2em;
+        padding-bottom: 10px;
+    }
+    
+    p {
+        margin-top: 2em;
+    }
     .profiles .img-desktop {
         display: none;
     }
@@ -85,6 +93,7 @@ p{
     
     .page h1 {
         font-size: 5rem;
+        margin-bottom: 0.2em;
     }
     .page {
         padding-inline: 3em;
@@ -96,15 +105,15 @@ p{
         flex-direction: column;
         align-items: center;
         margin-bottom: 50px;
+        gap: 0;
     }
 
     .page .section1 {
-        margin-bottom: 98px;
+        margin-bottom: 4em;
     }
 
     .profiles{
         flex-direction: column;
-        gap: 30px;
     }
 
     .profiles p {
