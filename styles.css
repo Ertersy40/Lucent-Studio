@@ -306,6 +306,38 @@ nav .star {
     animation: pulse-glow 5s infinite;
 }
 
+.CTAMsg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px; /* Adjust spacing as needed */
+    flex-wrap: wrap;
+}
+
+.CTAMsg h3 {
+    cursor: pointer;
+    text-align: center;
+    font-family: 'instrument serif';
+    font-size: 3.5em;
+    font-weight: normal;
+    font-style: italic;
+    color: var(--highlight-color);
+}
+
+.CTAMsg .arrowcircle {
+    margin-block: 50px;
+    height: 40px;
+    border: 1.5px solid var(--highlight-color);
+    width: 40px;
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-radius: calc(1px * infinity);
+    top: -0.15em;
+    left: 10px;
+}
+
 @keyframes pulse-glow {
 	0% {
 		filter: drop-shadow(0 0 30px var(--highlight-color));

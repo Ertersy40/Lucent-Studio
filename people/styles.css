@@ -1,6 +1,7 @@
 .page {
     background-color: var(--lowlight-color);
     padding: 3em 6.13em;
+    padding-bottom: 0;
 }
 
 * {
