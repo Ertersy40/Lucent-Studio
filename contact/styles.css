@@ -88,13 +88,16 @@
 .message a {
     font-size: 1.5rem;
 }
+.message {
+    max-height: 800px;
+}
 
-@media only screen and (max-width: 1265px) {
-    .hello h1 {
-        font-size: 7.5rem;
+@media only screen and (min-width: 1265px) {
+    .hello {
+        padding-top: 48px;
     }
     .message {
-        min-height: calc(100vh - var(--nav-height) - 284px - 88px - (4em * 2) - 5px);
+        min-height: calc(100vh - var(--nav-height) - 356.5px - (4em) - 48px - 62px - 4px);
     }
 }
 

@@ -93,42 +93,62 @@
     </body>
     <script>
         const form = document.getElementById('form');
-        const result = document.getElementById('result');
-        
+        const submitButton = form.querySelector('button[type="submit"]');
+        const span = submitButton.querySelector('span');
+    
+        // Store original text and image for restoration
+        const originalText = span.firstChild.textContent.trim();
+        const originalImg = span.querySelector('img');
+    
+        function updateButtonMessage(message) {
+            // Clear span content
+            span.textContent = message;
+        }
+    
+        function resetButtonMessage() {
+            span.textContent = originalText;
+            if (originalImg) {
+                span.appendChild(originalImg);
+            }
+        }
+    
         form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          const formData = new FormData(form);
-          const object = Object.fromEntries(formData);
-          const json = JSON.stringify(object);
-          result.innerHTML = "Please wait..."
-        
+            e.preventDefault();
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+    
+            updateButtonMessage("Almost there...");
+    
             fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: json
-                })
-                .then(async (response) => {
-                    let json = await response.json();
-                    if (response.status == 200) {
-                        result.innerHTML = "Form submitted successfully";
-                    } else {
-                        console.log(response);
-                        result.innerHTML = json.message;
-                    }
-                })
-                .catch(error => {
-                    console.log(error);
-                    result.innerHTML = "Something went wrong!";
-                })
-                .then(function() {
-                    form.reset();
-                    setTimeout(() => {
-                        result.style.display = "none";
-                    }, 3000);
-                });
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                const json = await response.json();
+                if (response.status === 200) {
+                    updateButtonMessage("Message sent!");
+                } else {
+                    console.log(response);
+                    updateButtonMessage(json.message || "Error");
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                updateButtonMessage("Something went wrong!");
+            })
+            .finally(() => {
+                form.reset();
+                setTimeout(resetButtonMessage, 3000);
+            });
         });
-        </script>
+    </script>
+    
+    
+    
+    
 </html>
