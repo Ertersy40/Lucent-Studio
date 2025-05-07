@@ -1,6 +1,7 @@
 .page {
     background-color: var(--lowlight-color);
-    padding: 3em 5.6em;
+    padding: 3em 6.13em;
+    padding-bottom: 0;
 }
 
 * {
@@ -23,17 +24,50 @@
     width: 200px;
 }
 
-.page .section {
+.page .section1 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 70px;
-    margin-bottom: 200px;
 }
 
 .page .section3 {
     align-items: center;
-    margin-top: -40vw;
 }
+
+.section .fancyArrowButton {
+    margin-top: 15px;
+}
+
+.profiles {
+    margin-top: 50px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.profiles .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+p b {
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+p b {
+    line-height: 1.4em;
+}
+
+p{
+    line-height: 1.6em;
+}
+
+.profiles .img-mobile {
+    display: none;
+}
+
+
 
 .section .textAndButton {
     color: var(--highlight-color);
@@ -43,10 +77,27 @@
 }
 
 @media only screen and (max-width: 776px) {
+    .page {
+        padding-top: 1.2em;
+        padding-bottom: 10px;
+    }
+    
+    p {
+        margin-top: 2em;
+    }
+    .profiles .img-desktop {
+        display: none;
+    }
+    .profiles .img-mobile {
+        display: block;
+    }
+    
     .page h1 {
         font-size: 5rem;
+        margin-bottom: 0.2em;
     }
     .page {
+        padding-inline: 3em;
         flex-direction: column;
     }
 
@@ -55,10 +106,25 @@
         flex-direction: column;
         align-items: center;
         margin-bottom: 50px;
+        gap: 0;
     }
-    .page .section2 {
+
+    .page .section1 {
+        margin-bottom: 4em;
+    }
+
+    .profiles{
+        flex-direction: column;
+    }
+
+    .profiles p {
+        margin-top: 2em;
+    }
+
+    .profiles .section3 {
         flex-direction: column-reverse;
     }
+
 
     .page .section3 {
         margin-top: 0;

@@ -48,7 +48,7 @@ body .theBenefits h2 {
 }
 
 .Process-hero{
-    padding: 2rem 5rem;
+    padding: 3rem 5rem;
     background-color: var(--lowlight-color);
     color: var(--highlight-color);
     text-align: center;
@@ -73,6 +73,7 @@ body .theBenefits h2 {
 }
 .Process-hero h1 {
     width: 100%;
+    margin-left: 35px;
 }
 
 .stepContainer {
@@ -139,15 +140,19 @@ body .theBenefits h2 {
 }
 
 .step .stepDetails .stepTitle {
-    font-size: 4rem;
-    font-weight: 100;
+    font-family: 'poppins';
+    font-size: 2.7em;
+    font-weight: normal;
+    font-style: normal;
     width: min(100%, 450px);
+    margin-block: 0.1em;
+    letter-spacing: 0em;
 }
 
 .step:nth-child(even) .stepDetails {
     grid-column-start: 1;
     grid-row-start: 1;
-    align-items: flex-end;
+    align-items: flex-start;
 }
 
 .step:nth-child(even) .stepNo {
@@ -155,20 +160,21 @@ body .theBenefits h2 {
 }
 
 .stepNo {
-    font-size: 5rem;
+    font-size: 9rem;
     font-weight: 100;
     width: 100%;
-
+    margin-block: 0;
 }
 
 .stepDetails p{
-    
-    max-width: 450px;
+    max-width: 550px;
+    margin-block: 0;
 }
 
 .step:nth-child(odd) .stepNo {
     text-align: right;
 }
+
 
 
 
@@ -203,6 +209,10 @@ body .theBenefits h2 {
 @media only screen and (max-width: 760px) {
     .Process-hero h1, .theBenefits h2 {
         font-size: 7em;
+    }
+
+    .stepNo {
+        font-size: 6.5rem;
     }
 
     .Process-hero #slider {
