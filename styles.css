@@ -325,18 +325,48 @@ nav .star {
 }
 
 .CTAMsg .arrowcircle {
-    margin-block: 50px;
-    height: 40px;
-    border: 1.5px solid var(--highlight-color);
-    width: 40px;
-    display: inline-flex;
     position: relative;
+    overflow: hidden;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: calc(1px * infinity);
-    top: -0.15em;
-    left: 10px;
-}
+    
+    /* dark base, so the white arrow is visible via difference */
+    background-color: var(--lowlight-color);
+    border: 1.5px solid var(--highlight-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .CTAMsg .arrowcircle::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 140%; height: 140%;
+    background: var(--highlight-color);
+    /* start fully off to the left: */
+    transform: skew(30deg) translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.3,1,0.8,1);
+    pointer-events: none;
+  }
+  
+  .CTAMsg:hover .arrowcircle::before {
+    /* slide to cover the circle */
+    transform: skew(30deg) translateX(0);
+  }
+  
+  .CTAMsg .arrowcircle img {
+    width: 20px;
+    height: auto;
+    mix-blend-mode: difference;
+    /* optional, to keep it centered during the wipe: */
+    position: relative;
+    z-index: 1;
+  }
+  
+  
+  
 
 @keyframes pulse-glow {
 	0% {
