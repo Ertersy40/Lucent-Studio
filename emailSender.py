@@ -127,9 +127,18 @@ async def main():
                 additionalNotes=notes
             )
             
+            
+            # allow the user to make edits to the subject
+            editQ = input(f"\n\nHere is the subject: {subject}\n Do you want to make an edit? (y/n)\n")
+            if editQ.lower() == "y":
+                subject = input("\n\nNew subject: \n")
+            
+            bodyQ = input(f"\n\nHere is the body: {html_body}\n Do you want to make an edit? (y/n)\n")
+            if bodyQ.lower() == "y":
+                html_body = input("\n\nNew body: \n")
+            
             # Send it
             try:
-                input(html_body)
                 sendEmail(to="wonk4040@gmail.com", subject=subject, html=html_body)
                 print(f"✅ Sent to {to_address}")
             except Exception as e:
