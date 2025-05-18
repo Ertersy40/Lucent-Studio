@@ -609,6 +609,14 @@ footer .star img {
     width: 12%;
 }
 
+.aknowledgement p{
+    max-width: 400px;
+    text-align: right;
+    margin-top: 30px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
 @media only screen and (max-width: 937px) {
     footer .socials {
         width: 60%;
@@ -616,6 +624,10 @@ footer .star img {
 }
 
 @media only screen and (max-width: 860px) {
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
     footer .socials p {
         display: none;
     }
@@ -626,6 +638,10 @@ footer .star img {
 
     footer .socials .socialImages {
         width: 70px;
+    }
+
+    footer .aknowledgement p {
+        text-align: left;
     }
 }
 
