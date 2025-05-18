@@ -186,7 +186,7 @@ nav .links #contact {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 101vw;
+        width: 102.5vw;
         opacity: 0;
         transition: opacity 0.2s ease-in-out;
     }
