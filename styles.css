@@ -228,6 +228,7 @@ nav .links #contact {
 }
 
 nav .nav-active {
+    z-index: 2;
     pointer-events: all;
     background: var(--lowlight-color);
     opacity: 1;
@@ -327,6 +328,7 @@ nav .star {
 }
 
 .CTAMsg .arrowcircle {
+    top: -10px;
     position: relative;
     overflow: hidden;
     display: inline-flex;
@@ -364,7 +366,6 @@ nav .star {
     mix-blend-mode: difference;
     /* optional, to keep it centered during the wipe: */
     position: relative;
-    z-index: 1;
   }
   
   
