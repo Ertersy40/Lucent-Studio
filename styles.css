@@ -534,7 +534,7 @@ nav .star {
 }
 
 .marquee2 span {
-    animation-delay: 0s; /* Half of the animation duration */
+    animation-delay: -0s; /* Half of the animation duration */
 }
 
 @keyframes marquee {
