@@ -619,6 +619,10 @@ footer .star img {
     footer .socials p {
         display: none;
     }
+        footer .socials {
+            width: 100%;
+        
+        }
 
     footer .socials .socialImages {
         width: 70px;
