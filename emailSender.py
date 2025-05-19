@@ -39,7 +39,7 @@ async def askLLM(prompt: str, isJson: bool = False) -> str:
             
     try:
         extractedResponse = result['choices'][0]['message']['content'].strip()
-        print(f"Successfully processed AI response: {extractedResponse}")
+        # print(f"Successfully processed AI response: {extractedResponse}")
         
         if not isJson:
             return extractedResponse
@@ -74,7 +74,7 @@ async def generateEmail(name, description, website, address, additionalNotes):
     emailDict = await askLLM(f"""
 You are an expert copywrighter and cold emailer.
 I have a website design and development agency called lucent studio (https://lucent.studio)
-I'm the developer and my girlfriend Abbey is the designer.
+I'm the developer and my partner Abbey is the designer.
 We recently designed embody osteopathy's website (https://www.embodyhealthcare.com.au/) which is an osteo in Eltham (On Bolton Street) and are quite prouf of the design and website in general
 Here's the review from Kath the owner of the osteo:
 "We were extremely happy with the high level of professional and attentive service that Will and Abbey provided. There was excellent communication and a quick turnaround of changes we wanted to make. Will and Abbey were wonderful to deal with, having an excellent insight into the professional design and layout of our website. We are delighted with the end product, it is exactly what we wanted, and we would highly recommend their services."
@@ -82,10 +82,29 @@ Here's the review from Kath the owner of the osteo:
 Now we're reaching out to new clients and I want to target this client.
 Here's their name: {name}
 Here's their description (as per their google business): {description} (if it's empty ignore this)
+Start the email with "I'm Will, a web developer, and together with Abbey (our designer), we run Lucent Studio in Eltham, offering website and branding design for local businesses."
+When linking to lucent.studio, make sure the link is as below:
+"https://lucent.studio/?utm_source=emailoutreach"
 I need you to convince them to have a call with myself and my designer to discuss creating a new website for them (or a coffee!)
 Use the following copywriting style:
 This style of copywriting is built on clarity, warmth, and relevance. It's conversational but purposeful—every word serves to either build trust, spark curiosity, or remove friction. You’re writing like a human, not a brand megaphone. The backbone of this approach comes from combining principles like AIDA (grab attention, build interest, create desire, prompt action) and PAS (Problem–Agitation–Solution), but softening them with genuine tone and empathy. You’re not pushing—you’re aligning with the reader’s needs and inviting them into a solution.
 To write like this, you focus on them first: their context, their potential problem, and what you noticed about them that made you reach out. You speak plainly but with care—avoid jargon, avoid hype. Use simple, rhythmic sentence structure. Let your language sound like something you’d say out loud, but tighten it so there’s no fluff. Add light specificity (like “The osteo was down the road on Bolton Street”) to make it real. And always give them an easy next step—low pressure, low effort, clear benefit. When done well, this approach makes the receiver feel seen, not sold to. That’s what gets replies.
+Never use hi there. Start with "Hi"
+Here's an example email we wrote:
+---
+Hi,
+
+I’m Will, a web developer, and together with Abbey (our designer), we run Lucent Studio in Eltham, offering website and branding design for local businesses.
+I came across Nillumbik Osteopathic Health Centre on Luck Street and wanted to reach out. We recently wrapped up a project with Embody Osteopathy in Montmorency—refreshing their website and branding to feel earthy, welcoming, and wellness-focused. Kath, the owner, was thrilled with the outcome and the process. You can check out their new site here: embodyhealthcare.com.au.
+I had a look at your current site and wondered if you’ve been thinking about a refresh or simply exploring what’s possible. No pressure—sometimes just having a conversation can spark the right ideas.
+If you're open to a quick call or even grabbing a coffee nearby, I’d love to hear more about your goals and see if we’re a good fit.
+
+Best regards,
+
+Will
+
+lucent.studio
+---
 Also this is their address (on google businesses)
 {address}
 if it's in Eltham make sure to mention that I live just down the road. If not then they're all local so mention that I live in Eltham.
@@ -139,7 +158,7 @@ async def main():
             
             # Send it
             try:
-                sendEmail(to="wonk4040@gmail.com", subject=subject, html=html_body)
+                sendEmail(to=to_address, subject=subject, html=html_body)
                 print(f"✅ Sent to {to_address}")
             except Exception as e:
                 print(f"❌ Failed to send to {to_address}: {e}")
