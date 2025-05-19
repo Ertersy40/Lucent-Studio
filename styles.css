@@ -252,8 +252,7 @@ nav .nav-active {
 }
 
 .hero {
-    padding-top: var(--nav-height);
-    padding: 2em 3em;
+    padding: 1em 3em;
     padding-bottom: 14px;
     background-color: var(--lowlight-color);
     color: var(--highlight-color);

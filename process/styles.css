@@ -59,21 +59,21 @@ body .theBenefits h2 {
     align-items: center;
 }
 
-.Process-hero h1, .theBenefits h2 {
+h1, .theBenefits h2 {
     color: var(--highlight-color);
     font-size: 11rem;
     font-weight: 500;
     font-style: italic;
     width: fit-content;
     margin-top: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     text-align: left;
     font-family: "Instrument Serif";
     font-style: italic;
 }
-.Process-hero h1 {
-    width: 100%;
-    margin-left: 35px;
+h1 {
+    margin-left: 98.08px;
+    padding-top: 48px;
 }
 
 .stepContainer {
@@ -179,20 +179,19 @@ body .theBenefits h2 {
 
 
 @media only screen and (max-width: 900px) {
-    .Process-hero h1, .theBenefits h2 {
+    h1, .theBenefits h2 {
         font-size: 8rem;
         width: fit-content;
-        text-align: center;
-        margin-left: 0;
+        margin-left: 48px;
+    }
+    h1 {
+        width: calc(100% - 48px);
     }
 }
 
 @media only screen and (max-width: 640px) {
     body .theBenefits h2 {
         font-size: 5rem;
-        width: 100vw;
-        text-align: center;
-        margin-left: 0;
     }
 }
 
@@ -207,7 +206,7 @@ body .theBenefits h2 {
 }
 
 @media only screen and (max-width: 760px) {
-    .Process-hero h1, .theBenefits h2 {
+    h1, .theBenefits h2 {
         font-size: 7em;
     }
 
@@ -222,14 +221,14 @@ body .theBenefits h2 {
         margin-block: 0;
     }
     .step .stepDetails .stepTitle {
-        letter-spacing: 2px;
+        letter-spacing: 0px;
         font-size: 2.5rem;
     }
     
 
     .step {
         margin-left: 50px;
-        padding-left: 50px;
+        padding-left: 30px;
         width: auto;
         padding-right: 0;
         display: flex;
@@ -260,15 +259,12 @@ body .theBenefits h2 {
 }
 @media only screen and (max-width: 623px) {
 
-    .Process-hero h1 {
-        font-size: 5em;
+    h1 {
+        padding-top: 48px;
+        font-size: 4.4rem;
     }
 }
 @media only screen and (max-width: 495px) {
-
-    .Process-hero h1 {
-        font-size: 3.5em;
-    }
 
     .lighthouse {
         display: none;
