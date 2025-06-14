@@ -4,10 +4,8 @@ import resend
 from dotenv import load_dotenv
 import csv
 import asyncio
+import datetime
 load_dotenv()
-
-
-
 import openai
 import json
 import aiohttp
@@ -69,7 +67,25 @@ def sendEmail(to, subject, html):
 
     r = resend.Emails.send(params)
     return r
+def saveEmail(to: str, subject: str, html: str):
+    # Define the file name
+    filename = "sent_emails.csv"
+    
+    # Check if file exists to write header
+    file_exists = os.path.isfile(filename)
 
+    # Prepare the row data
+    now = datetime.datetime.now().isoformat()
+    row = [now, to, subject, html]
+
+    # Write the data to the CSV file
+    with open(filename, mode='a', encoding='utf-8', newline='') as file:
+        writer = csv.writer(file)
+        if not file_exists:
+            writer.writerow(["Timestamp", "To", "Subject", "Body"])
+        writer.writerow(row)
+        
+        
 async def generateEmail(name, description, website, address, additionalNotes):
     emailDict = await askLLM(f"""
 You are an expert copywrighter and cold emailer.
@@ -94,20 +110,21 @@ Here's an example email we wrote:
 ---
 Hi,
 
-I’m Will, a web developer, and together with Abbey (our designer), we run Lucent Studio in Eltham, offering website and branding design for local businesses.
+I'm Will, a web developer, and together with Abbey (our designer), we run Lucent Studio in Eltham, offering website and branding design for local businesses.
 I came across Nillumbik Osteopathic Health Centre on Luck Street and wanted to reach out. We recently wrapped up a project with Embody Osteopathy in Montmorency—refreshing their website and branding to feel earthy, welcoming, and wellness-focused. Kath, the owner, was thrilled with the outcome and the process. You can check out their new site here: embodyhealthcare.com.au.
-I had a look at your current site and wondered if you’ve been thinking about a refresh or simply exploring what’s possible. No pressure—sometimes just having a conversation can spark the right ideas.
-If you're open to a quick call or even grabbing a coffee nearby, I’d love to hear more about your goals and see if we’re a good fit.
+I had a look at your current site and wondered if you've been thinking about a refresh or simply exploring what's possible. No pressure—sometimes just having a conversation can spark the right ideas.
+If you're open to a quick call or even grabbing a coffee nearby, I'd love to hear more about your goals and see if we're a good fit.
 
 Best regards,
 
 Will
 
 lucent.studio
+0409466685
 ---
-Also this is their address (on google businesses)
-{address}
-if it's in Eltham make sure to mention that I live just down the road. If not then they're all local so mention that I live in Eltham.
+If the place is Eltham, mention Eltham. If it's Warrandyte, mention Warrandyte. We live in both places. Don't mention this, just choose one appropriate to the person and use it in the email.
+If the place is in Warrandyte, say we run Lucent Studio in Warrandyte.
+If it's in Warrandyte, don't say "just down the road in Eltham..." say in eltham
 These sites were chosen because their sites need an upgrade and feel like they don't represent their brand well. Don't insult them with is information though.
 Also this is their website url: {website}
 Here are some quick notes we found from browsing their site:
@@ -115,6 +132,8 @@ Here are some quick notes we found from browsing their site:
 These emails will be going to their info@ email which is probably their reception so you should ask if they could forward the email on or give the details of the right person if I've got the wrong email
 You should format your response in the following json:
 {{"EmailBody": "the html for the email (just use p tags and a tags, no need to include the html or head or body or heading 1-6 or anything)", "Subject": "the subject line. Keep it short and eye catching but human, not like you're optimizing for opens (even though you are)"}}
+DONT USE EM DASHES OR ’
+The subject should be "Local Web Design for ____"
 """, isJson=True)
     print(emailDict)
     subject = emailDict["Subject"]
@@ -135,7 +154,7 @@ async def main():
             
             print("\n\n\n\n##################NEW SITE##################")
             print(f"Name: {name}\n\nDescription: {desc}\n\nSite: {site}\n\nAddress: {addr}\n\n")
-            notes = input("Notes to add:\n\n")
+            notes = ""
             
             # Generate subject & body via GPT
             subject, html_body = await generateEmail(
@@ -147,18 +166,18 @@ async def main():
             )
             
             
-            # allow the user to make edits to the subject
-            editQ = input(f"\n\nHere is the subject: {subject}\n Do you want to make an edit? (y/n)\n")
-            if editQ.lower() == "y":
-                subject = input("\n\nNew subject: \n")
+            # # allow the user to make edits to the subject
+            # editQ = input(f"\n\nHere is the subject: {subject}\n Do you want to make an edit? (y/n)\n")
+            # if editQ.lower() == "y":
+            #     subject = input("\n\nNew subject: \n")
             
-            bodyQ = input(f"\n\nHere is the body: {html_body}\n Do you want to make an edit? (y/n)\n")
-            if bodyQ.lower() == "y":
-                html_body = input("\n\nNew body: \n")
+            # bodyQ = input(f"\n\nHere is the body: {html_body}\n Do you want to make an edit? (y/n)\n")
+            # if bodyQ.lower() == "y":
+            #     html_body = input("\n\nNew body: \n")
             
             # Send it
             try:
-                sendEmail(to=to_address, subject=subject, html=html_body)
+                saveEmail(to=to_address, subject=subject, html=html_body)
                 print(f"✅ Sent to {to_address}")
             except Exception as e:
                 print(f"❌ Failed to send to {to_address}: {e}")
