@@ -60,10 +60,14 @@
     min-height: calc(100vh - var(--nav-height) - 356px - 88px - (4em * 2) - 5px);
     padding: 4em 100px;
     background-color: var(--highlight-color);
+    padding-bottom: 0;
 }
 
 .message p {
     margin-block: 0.5em;
+    font-weight: 500;
+    color: #041022;
+    font-size: 1em;
 }
 
 /* TODO: Make these icons visible somehow */

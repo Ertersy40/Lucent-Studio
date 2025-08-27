@@ -20,22 +20,19 @@ body .theBenefits h2 {
 }
 
 .benefit {
-    padding: 0 3em;
-    min-height: 250px;
+    padding: 0 6em;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 
 .benefits h3 {
+    margin-block: 1px;
     font-family: 'poppins', sans-serif;
-    font-size: 1.45rem;
+    font-size: 1.7rem;
     font-weight: 500;
     letter-spacing: normal;
-    border: 1.5px solid var(--highlight-color);
     width: fit-content;
-    padding: 14px 21px;
-    border-radius: 50px;
 }
 
 .autoScroll.dark {
@@ -192,16 +189,21 @@ h1 {
 @media only screen and (max-width: 640px) {
     body .theBenefits h2 {
         font-size: 5rem;
+        margin-left: .4em;
     }
 }
 
 @media only screen and (max-width: 470px) {
     body .theBenefits h2 {
-        font-size: 3rem;
+        font-size: 4.4rem;
+        margin-left: .5em;
+        margin-top: .2em;
+        margin-bottom: .3em;
+        letter-spacing: 0;
     }
 
     .benefit h3 {
-        font-size: 1rem;;
+        font-size: 1.5rem;
     }
 }
 
@@ -224,7 +226,6 @@ h1 {
         letter-spacing: 0px;
         font-size: 2.5rem;
     }
-    
 
     .step {
         margin-left: 50px;
@@ -247,14 +248,16 @@ h1 {
         grid-row-start: 1;
         align-items: flex-end;
     }
-    
-
 
     .benefits {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    .benefit {
+        padding: 0 1.8em;
     }
 }
 @media only screen and (max-width: 623px) {
