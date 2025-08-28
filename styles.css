@@ -272,7 +272,7 @@ nav .nav-active {
 }
 
 .hero h2 {
-    font-size: min(11vw, 40px);
+    font-size: min(11vw, 48px);
     letter-spacing: 0px;
     font-weight: 300;
     width: 90vw;
@@ -677,4 +677,12 @@ footer .star img {
     .feature h4 {
         margin-top: 1em;
     }
+
+    .hero h2 {
+    font-size: 35px;
+    letter-spacing: 0px;
+    font-weight: 300;
+    width: 90vw;
+    line-height: 1.2em;
+}
 }
