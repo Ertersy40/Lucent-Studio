@@ -7,11 +7,26 @@
     <meta name="description" content="Explore Lucent Studio's portfolio of custom websites and branding projects. See how we help Melbourne businesses thrive online with modern design.">
     <link rel="canonical" href="https://lucent.studio/portfolio/">
     <link rel="icon" type="image/x-icon" href="../Assets/Icons/Star.svg">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lucent.studio/portfolio/">
+    <meta property="og:title" content="Portfolio | See Lucent Studio's Website & Branding Projects">
+    <meta property="og:description" content="Explore Lucent Studio's portfolio of custom websites and branding projects. See how we help Melbourne businesses thrive online with modern design.">
+    <meta property="og:image" content="https://lucent.studio/Assets/Images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://lucent.studio/portfolio/">
+    <meta name="twitter:title" content="Portfolio | Lucent Studio's Web Design Projects">
+    <meta name="twitter:description" content="See our custom websites and branding projects for Melbourne businesses.">
+    <meta name="twitter:image" content="https://lucent.studio/Assets/Images/og-image.jpg">
+
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-302P3EYHP4"></script>
@@ -21,6 +36,49 @@
     gtag('js', new Date());
 
     gtag('config', 'G-302P3EYHP4');
+    </script>
+
+    <!-- Portfolio Schema (ItemList of CreativeWorks) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            {
+                "@type": "CreativeWork",
+                "name": "Embody Healthcare Website",
+                "description": "Complete brand refresh and website redesign for Embody Osteopathy including logo, colour palette, and business cards.",
+                "url": "https://embodyosteopathy.com.au",
+                "author": {
+                    "@type": "Organization",
+                    "name": "Lucent Studio"
+                },
+                "image": "https://lucent.studio/Assets/Images/Embody.png"
+            },
+            {
+                "@type": "CreativeWork",
+                "name": "Charlotte Cottrell Portfolio Website",
+                "description": "Professional portfolio site for an Intimacy Coordinator and Production Assistant, designed to highlight expertise and experience.",
+                "url": "https://charlottecottrell.com",
+                "author": {
+                    "@type": "Organization",
+                    "name": "Lucent Studio"
+                },
+                "image": "https://lucent.studio/Assets/Images/CharSite.png"
+            },
+            {
+                "@type": "CreativeWork",
+                "name": "Troy Perkin Registered Builder Website",
+                "description": "First website for Troy Perkin, built from the ground up to showcase building services and generate enquiries.",
+                "url": "https://troyperkin.com",
+                "author": {
+                    "@type": "Organization",
+                    "name": "Lucent Studio"
+                },
+                "image": "https://lucent.studio/Assets/Images/Troy.png"
+            }
+        ]
+    }
     </script>
 </head>
 <body>
@@ -59,7 +117,7 @@
                     <button class="fancyArrowButton inverted"><span>View the Site <img src="/Assets/Icons/Arrow Icon White.svg" alt=""></span></button>
                 </a>
             </div>
-            <img width="95%" src="/Assets/Images/Embody.png" alt="Screenshot of the Embody Osteopathy website">
+            <img width="95%" height="auto" src="/Assets/Images/Embody.png" alt="Screenshot of the Embody Osteopathy website">
         </div>
         <!-- <div class="section section2">
             <img width="100%" src="/Assets/Images/teuring.png" alt="Screenshot of the Teuring website">
@@ -72,7 +130,7 @@
             </div>
         </div> -->
         <div class="section section1.5">
-            <img width="95%" src="/Assets/Images/CharSite.png" alt="Screenshot of the Charlotte Cottrell website">
+            <img width="95%" height="auto" src="/Assets/Images/CharSite.png" alt="Screenshot of the Charlotte Cottrell website">
             <div class="textAndButton">
                 <h2>Intimacy Professional Portfolio</h2>
                 
@@ -90,7 +148,7 @@
                 <button class="fancyArrowButton inverted"><span>View the Site <img src="/Assets/Icons/Arrow Icon White.svg" alt=""></span></button>
                 </a>
             </div>
-            <img width="95%" src="/Assets/Images/Troy.png" alt="Screenshot of the Troy Perkin website">
+            <img width="95%" height="auto" src="/Assets/Images/Troy.png" alt="Screenshot of the Troy Perkin website">
         </div>
 
         <a href="/contact">

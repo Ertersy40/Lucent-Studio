@@ -264,14 +264,14 @@ nav .nav-active {
     align-items: center;
 }
 
-.hero h1 {
+.hero-logo {
     display: flex;
     margin-block: 0px;
     font-weight: 500;
     font-size: min(19vw, 130px);
 }
 
-.hero h2 {
+.hero h1 {
     font-size: min(11vw, 48px);
     letter-spacing: 0px;
     font-weight: 300;
@@ -678,7 +678,7 @@ footer .star img {
         margin-top: 1em;
     }
 
-    .hero h2 {
+    .hero h1 {
     font-size: 35px;
     letter-spacing: 0px;
     font-weight: 300;
