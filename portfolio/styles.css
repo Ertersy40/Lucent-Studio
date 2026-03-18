@@ -1,111 +1,117 @@
-.page {
-    background-color: var(--lowlight-color);
-    padding: 3em;
-}
+    .page {
+        background-color: var(--lowlight-color);
+        padding: 3em;
+    }
 
-* {
-    color: var(--highlight-color)
-}
+    * {
+        color: var(--highlight-color)
+    }
 
-.page h1 {
-    margin: 0;
-    margin-left: 50px;
-    font-size: 11rem;
-    font-weight: 500;
-    font-family: "Instrument Serif";
-    font-style: italic;
-}
-
-.page h2 {
-    letter-spacing: normal; 
-    font-size: 2.7em;
-    font-weight: normal;
-}
-
-.page .section a:hover, .page .section button:hover {
-    cursor: pointer;
-}
-
-.page .section {
-    padding-inline: 50px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    column-gap: 70px;
-    margin-bottom: 50px;
-    margin-top: 50px;
-}
-
-.page .section h2 {
-    font-family: 'poppins', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    margin-block: 1px;
-    line-height: 1.3em;
-}
-
-.page .section p {
-    margin-bottom: 25px;
-    font-size: 1.1rem;
-}
-
-.page .section img:not(.fancyArrowButton img) {
-    padding: 10px;
-    border: 1.5px solid var(--highlight-color);
-    border-radius: 20px;
-}
-
-.page h3 {
-    cursor: pointer;
-    text-align: center;
-    font-family: 'instrument serif';
-    font-size: 3.5em;
-    font-weight: normal;
-    font-style: italic;
-}
-
-.arrowcircle {
-    margin-top: -10px;
-    height: 40px;
-    border: 1.5px solid var(--highlight-color);
-    width: 40px;
-    display: inline-flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    border-radius: calc(1px* infinity);
-    top: -0.15em;
-    left: 10px;
-}
-
-.arrowcircle img {
-    width: 50%;
-    padding: 0px 0px;
-}
-
-@media only screen and (max-width: 900px) {
     .page h1 {
-        margin-left: 0;
-        margin-bottom: 0;
-        font-size: 5rem;
+        margin: 0;
+        margin-left: 50px;
+        font-size: 11rem;
+        font-weight: 500;
+        font-family: "Instrument Serif";
+        font-style: italic;
     }
 
-    .page .section h2 {
-        margin-top: 25px;
+    .page h2 {
+        letter-spacing: normal; 
+        font-size: 2.7em;
+        font-weight: normal;
     }
 
-    .page .section1 {
-        margin-top: 20px;
+    .page .section a:hover, .page .section button:hover {
+        cursor: pointer;
     }
 
     .page .section {
-        padding-inline: 0;
-        display: flex;
-        flex-direction: column;
+        padding-inline: 50px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         align-items: center;
+        column-gap: 70px;
+        margin-bottom: 50px;
+        margin-top: 50px;
     }
 
-    .page .section:nth-child(even) {
-        flex-direction: column-reverse;
+    .page .section h2 {
+        font-family: 'poppins', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        margin-block: 1px;
+        line-height: 1.3em;
     }
-}
+
+    .page .section p {
+        margin-bottom: 25px;
+        font-size: 1.1rem;
+    }
+
+    .page .section img:not(.fancyArrowButton img) {
+        padding: 10px;
+        border: 1.5px solid var(--highlight-color);
+        border-radius: 20px;
+    }
+    .page .section img (.fan) {
+        padding: 10px;
+        border: 1.5px solid var(--highlight-color);
+        border-radius: 20px;
+    }
+
+
+    .page h3 {
+        cursor: pointer;
+        text-align: center;
+        font-family: 'instrument serif';
+        font-size: 3.5em;
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    .arrowcircle {
+        margin-top: -10px;
+        height: 40px;
+        border: 1.5px solid var(--highlight-color);
+        width: 40px;
+        display: inline-flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        border-radius: calc(1px* infinity);
+        top: -0.15em;
+        left: 10px;
+    }
+
+    .arrowcircle img {
+        width: 50%;
+        padding: 0px 0px;
+    }
+
+    @media only screen and (max-width: 900px) {
+        .page h1 {
+            margin-left: 0;
+            margin-bottom: 0;
+            font-size: 5rem;
+        }
+
+        .page .section h2 {
+            margin-top: 25px;
+        }
+
+        .page .section1 {
+            margin-top: 20px;
+        }
+
+        .page .section {
+            padding-inline: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page .section:nth-child(even) {
+            flex-direction: column-reverse;
+        }
+    }

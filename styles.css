@@ -221,8 +221,8 @@ nav .links #contact {
 }
 
 .burger div {
-    width: 27px;
-    height: 2px;
+    width: 25px;
+    height: 1.5px;
     background-color: var(--highlight-color);
     transition: all 0.3s ease;
 }
@@ -272,7 +272,7 @@ nav .nav-active {
 }
 
 .hero h2 {
-    font-size: min(11vw, 40px);
+    font-size: min(11vw, 48px);
     letter-spacing: 0px;
     font-weight: 300;
     width: 90vw;
@@ -594,7 +594,7 @@ footer .star img {
 }
 
 .socials {
-    height: 30px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -610,10 +610,10 @@ footer .star img {
 }
 
 .aknowledgement p{
-    max-width: 400px;
+    max-width: 410px;
     text-align: right;
-    margin-top: 30px;
-    font-size: 0.8rem;
+    margin-top: 10px;
+    font-size: 0.7rem;
     opacity: 0.7;
 }
 
@@ -677,4 +677,12 @@ footer .star img {
     .feature h4 {
         margin-top: 1em;
     }
+
+    .hero h2 {
+    font-size: 35px;
+    letter-spacing: 0px;
+    font-weight: 300;
+    width: 90vw;
+    line-height: 1.2em;
+}
 }
