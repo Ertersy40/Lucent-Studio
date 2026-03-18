@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://lucent.studio/sitemap.xml
+
+User-agent: GPTBot
+Allow: /

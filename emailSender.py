@@ -86,6 +86,23 @@ def saveEmail(to: str, subject: str, html: str):
         writer.writerow(row)
         
         
+def resend_saved_emails():
+    filename = "sent_emails.csv"
+    
+    if not os.path.isfile(filename):
+        print("No saved emails found.")
+        return
+
+    with open(filename, mode='r', encoding='utf-8') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            to = row["To"]
+            subject = row["Subject"]
+            html = row["Body"]
+            print(f"📤 Sending email to: {to}, Subject: {subject}")
+            response = sendEmail(to, subject, html)
+            print(f"✅ Response: {response}")
+
 async def generateEmail(name, description, website, address, additionalNotes):
     emailDict = await askLLM(f"""
 You are an expert copywrighter and cold emailer.
